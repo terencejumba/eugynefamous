@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "866815221027",
+    "firebase_url": "https://eugynefamous-940ee.firebaseio.com",
+    "project_id": "eugynefamous-940ee",
+    "storage_bucket": "eugynefamous-940ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866815221027:android:d4926392597363127bc096",
+        "android_client_info": {
+          "package_name": "quinton.terence.eugynefamous"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866815221027-uiomhraa4nh3au8o8bgo57lrrqo6n509.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfY1gdZmah2_6yhb6t1zGH2FLVhzU-zQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866815221027-uiomhraa4nh3au8o8bgo57lrrqo6n509.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

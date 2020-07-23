@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single"
+        >
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="home"
+            android:icon="@drawable/homeicon"/>
+
+        <item
+            android:id="@+id/nav_search"
+            android:title="search"
+            android:icon="@drawable/searchicon"/>
+
+        <item
+            android:id="@+id/nav_cart"
+            android:title="cart"
+            android:icon="@drawable/cart"/>
+
+
+
+
+    </group>
+
+
+    <item android:title="categories">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="single"
+                >
+
+                <item
+                    android:id="@+id/nav_shirt"
+                    android:title="shirt"
+                    android:icon="@drawable/shirts"/>
+
+                <item
+                    android:id="@+id/nav_tshirts"
+                    android:title="tshirts"
+                    android:icon="@drawable/tshirts"/>
+
+                <item
+                    android:id="@+id/nav_sweaters"
+                    android:title=" sweaters"
+                    android:icon="@drawable/sweater"/>
+
+                <item
+                    android:id="@+id/nav_belts"
+                    android:title=" belts"
+                    android:icon="@drawable/belts"/>
+
+                <item
+                    android:id="@+id/nav_hats"
+                    android:title=" hats"
+                    android:icon="@drawable/hat"/>
+
+                <item
+                    android:id="@+id/nav_shorts"
+                    android:title=" shorts"
+                    android:icon="@drawable/pants"/>
+
+
+                <item
+                    android:id="@+id/nav_trouser"
+                    android:title=" trouser"
+                    android:icon="@drawable/trousers"/>
+
+                <item
+                    android:id="@+id/nav_dresses"
+                    android:title=" dresses"
+                    android:icon="@drawable/dress"/>
+
+                <item
+                    android:id="@+id/nav_bags"
+                    android:title=" bags"
+                    android:icon="@drawable/bags"/>
+
+                <item
+                    android:id="@+id/nav_shoes"
+                    android:title=" shoes"
+                    android:icon="@drawable/shoes"/>
+
+                <item
+                    android:id="@+id/nav_socks"
+                    android:title=" socks"
+                    android:icon="@drawable/socks"/>
+
+
+            </group>
+
+
+        </menu>
+
+
+    </item>
+
+    <item android:title="profile">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="single"
+                >
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="profile"
+                    android:icon="@drawable/usericon"/>
+
+                <item
+                    android:id="@+id/nav_settingsbin"
+                    android:title="settings"
+                    android:icon="@drawable/settings"/>
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title=" logout"
+                    android:icon="@drawable/logout"/>
+
+
+
+
+            </group>
+
+
+        </menu>
+
+
+    </item>
+
+
+
+</menu>

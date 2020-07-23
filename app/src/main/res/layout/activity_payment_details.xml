@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentDetailsActivity">
+
+    <TextView
+        android:id="@+id/pay_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="choose your prefered payment option "
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/paypal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="paypal"
+        android:textSize="15sp"
+        android:layout_below="@id/pay_detail_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/mpesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mpesa"
+        android:layout_toRightOf="@id/paypal"
+        android:layout_below="@id/pay_detail_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"/>
+
+
+    <TextView
+        android:id="@+id/choose_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="choose your currency"
+        android:textSize="14sp"
+        android:layout_below="@id/paypal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+
+    <TextView
+        android:id="@+id/ksh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ksh"
+        android:layout_below="@+id/choose_currency"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+
+    <TextView
+        android:id="@+id/usd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usd"
+        android:layout_below="@+id/ksh"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+
+    <Button
+        android:id="@+id/confirm_pay_btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:layout_below="@+id/usd"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+
+</RelativeLayout>
