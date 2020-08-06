@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BagsActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/r22"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true">
+
+
+        <ImageView
+            android:id="@+id/bags_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"/>
+
+
+        <TextView
+            android:id="@+id/bags_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:gravity="center"
+            android:text="Bags"
+            android:textAlignment="center"
+            android:fontFamily="@font/alataregular"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/handbags_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r22"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textStyle="bold"
+
+        android:text="Hand bags"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textSize="@dimen/_20sdp" />
+
+    <TextView
+        android:id="@+id/handbags_more_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r22"
+        android:layout_marginLeft="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:layout_toRightOf="@+id/handbags_title"
+
+        android:text="show more"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bagslist"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/handbags_title" />
+
+
+    <TextView
+        android:id="@+id/_bags_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bagslist"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:fontFamily="@font/alataregular"
+
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:text="bags"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_20sdp" />
+
+    <TextView
+        android:id="@+id/_bags_more_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bagslist"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_170sdp"
+        android:layout_toRightOf="@+id/_bags_title"
+        android:text="show more"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/_bagslist"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_bags_title" />
+
+
+</RelativeLayout>
