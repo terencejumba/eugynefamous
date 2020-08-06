@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinalPaymentDetails">
+    tools:context=".FinalPaymentDetails"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,9 +17,11 @@
         <TextView
             android:id="@+id/txtid"
             android:textStyle="bold"
+            android:fontFamily="@font/alataregular"
             android:text="pay id"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="@dimen/_100sdp"
+            android:textSize="@dimen/_14sdp"
             android:layout_height="wrap_content"/>
 
 
@@ -25,17 +29,34 @@
             android:id="@+id/txtAmount"
             android:textStyle="bold"
             android:text="pay amount"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_100sdp"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/alataregular"
+            android:textSize="@dimen/_14sdp"
             android:layout_height="wrap_content"/>
+
 
         <TextView
             android:id="@+id/txtStatus"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="150dp"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_100sdp"
+            android:fontFamily="@font/alataregular"
             android:text="pay status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/done_btn"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_100sdp"
+            android:fontFamily="@font/alataregular"
+            android:background="@layout/button_indesign"
+            android:textSize="@dimen/_14sdp"
+            android:text="done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

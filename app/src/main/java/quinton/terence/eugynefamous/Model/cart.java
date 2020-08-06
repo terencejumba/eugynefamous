@@ -2,12 +2,12 @@ package quinton.terence.eugynefamous.Model;
 
 public class cart {
 
-    private String pid, pname, price, quantity, discount, color, size;
+    private String pid, pname, price, quantity, discount, color, size, category, sex;
 
     public cart() {
     }
 
-    public cart(String pid, String pname, String price, String quantity, String discount, String color, String size) {
+    public cart(String pid, String pname, String price, String quantity, String discount, String color, String size, String category, String sex) {
         this.pid = pid;
         this.pname = pname;
         this.price = price;
@@ -15,6 +15,8 @@ public class cart {
         this.discount = discount;
         this.color = color;
         this.size = size;
+        this.category = category;
+        this.sex = sex;
     }
 
     public String getPid() {
@@ -63,6 +65,22 @@ public class cart {
 
     public void setcolor(String color) {
         this.color = color;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getSize() {

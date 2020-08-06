@@ -2,56 +2,238 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colormajor"
     tools:context=".HomeActivity"
-    tools:openDrawer="start"
-    android:id="@+id/drawer_layout">
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="match_parent"
-        android:theme="@style/navigationTheme"
         android:layout_height="match_parent"
-        android:background="#fff"
         android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:theme="@style/navigationTheme"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu" />
+
 
     <RelativeLayout
         android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/menuicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:src="@drawable/menuicon" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclermenu"
-            android:layout_below="@+id/menuicon"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            android:layout_marginTop="20dp"/>
-
-
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/cart_floating"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/cart"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_below="@+id/menuicon"
+            android:layout_marginTop="@dimen/_10sdp">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/shirts__"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alataregular"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp"
+
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:text="shirts" />
+
+                <TextView
+                    android:id="@+id/shirts_more_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/shirts__"
+                    android:fontFamily="@font/alataregular"
+                   android:layout_marginLeft="@dimen/_160sdp"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colortext"
+                    android:text="show more" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclermenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shirts__"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/shorts__"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclermenu"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/alataregular"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="shorts" />
+
+
+                <TextView
+                    android:id="@+id/shorts_more_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclermenu"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/alataregular"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="show more"
+                    android:layout_toRightOf="@+id/shorts__"
+                    android:layout_marginLeft="@dimen/_160sdp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/short_recycler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/shorts__"
+                    android:layout_marginTop="@dimen/_20sdp" />
+
+
+                <TextView
+                    android:id="@+id/shoes__"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/short_recycler"
+                    android:textColor="@color/colortext"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/alataregular"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="shoes" />
+
+                <TextView
+                    android:id="@+id/shoes_more_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/short_recycler"
+                    android:fontFamily="@font/alataregular"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/colortext"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="show more"
+                    android:layout_toRightOf="@id/shoes__"
+                    android:layout_marginLeft="@dimen/_160sdp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/shoes_recycler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shoes__"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/trouser__"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shoes_recycler"
+                    android:fontFamily="@font/alataregular"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="trouser" />
+
+                <TextView
+                    android:id="@+id/trouser_more_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shoes_recycler"
+                    android:fontFamily="@font/alataregular"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="show more"
+                    android:layout_toRightOf="@id/trouser__"
+                    android:textColor="@color/colortext"
+                    android:layout_marginLeft="@dimen/_160sdp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/trouser_recycler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trouser__"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:scrollbars="vertical" />
+
+                <TextView
+                    android:id="@+id/tshirts__"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trouser_recycler"
+                    android:fontFamily="@font/alataregular"
+                    android:layout_marginLeft="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="t shirts" />
+
+
+                <TextView
+                    android:id="@+id/tshirts_more_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trouser_recycler"
+                    android:fontFamily="@font/alataregular"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="show more"
+                    android:layout_toRightOf="@id/tshirts__"
+                    android:layout_marginLeft="@dimen/_160sdp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tshirts_recycler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tshirts__"
+                    android:layout_marginTop="@dimen/_20sdp"/>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/cart_floating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_100sdp"
+                    android:src="@drawable/cart" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WomenShortsActivity"
+    android:padding="@dimen/_5sdp"
+    android:background="@color/colormajor">
+
+    <RelativeLayout
+        android:id="@+id/rl44"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/womenshorts_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:id="@+id/womensshirts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Shorts"
+            android:textStyle="bold"
+            android:fontFamily="@font/alataregular"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:id="@+id/womenshort_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/womensshort_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="womens shorts"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:layout_below="@id/rl44"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/womensshortslist_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:background="@color/colormajor"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/womensshort_"/>
+
+    <Button
+        android:id="@+id/next_womenshort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="next"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/womensshortslist_"/>
+
+</RelativeLayout>

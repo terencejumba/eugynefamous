@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminCategoryActivity">
+    tools:context=".AdminCategoryActivity"
+    android:background="@color/colormajor">
 
     <TextView
         android:id="@+id/sloga_category"
@@ -12,22 +13,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="@dimen/_27sdp"
         android:gravity="center_horizontal"
+        android:padding="@dimen/_5sdp"
+
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
         android:text="Add new product"
         android:textAlignment="center"
-        android:textSize="26sp"
+        android:textSize="@dimen/_26ssp"
         android:textStyle="bold" />
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sloga_category"
+        android:layout_marginTop="@dimen/_10sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -36,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/sloga_category"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -47,17 +53,19 @@
 
                     <ImageView
                         android:id="@+id/t_shirts"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/tshirts" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
                         android:text="t-shirts"
-                        android:textSize="18sp"
-                        android:layout_marginTop="15dp"/>
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -68,17 +76,19 @@
 
                     <ImageView
                         android:id="@+id/shirts"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/shirts" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
                         android:text="shirts"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -89,17 +99,19 @@
 
                     <ImageView
                         android:id="@+id/female_dresses"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/dress" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
                         android:text="dressees"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -110,17 +122,19 @@
 
                     <ImageView
                         android:id="@+id/hats"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/hat" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
                         android:text="hats"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -133,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linear1_category_layout"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -144,17 +158,19 @@
 
                     <ImageView
                         android:id="@+id/trousers"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/trousers" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="trousers"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -165,17 +181,19 @@
 
                     <ImageView
                         android:id="@+id/shorts"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/pants" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="shorts"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -186,17 +204,19 @@
 
                     <ImageView
                         android:id="@+id/socks"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/socks" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="socks"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -207,24 +227,28 @@
 
                     <ImageView
                         android:id="@+id/bags"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
                         android:src="@drawable/bags" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="bags"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:id="@+id/linear3_category_layout"
@@ -232,7 +256,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linear2_category_layout"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -243,17 +267,19 @@
 
                     <ImageView
                         android:id="@+id/belts"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:src="@drawable/belts" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="belts"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
@@ -264,23 +290,288 @@
 
                     <ImageView
                         android:id="@+id/shoes"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="16dp"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16ssp"
                         android:src="@drawable/shoes" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         android:text="shoes"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sweaters"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/sweater" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="sweaters"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear4_category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear2_category_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/skirts"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:src="@drawable/skirt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="skirts"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/lingerie"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/lingerie" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:text="lingerie"
                         android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/jumpsuits"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/jumpsuit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:text="jumpsuits"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear5_category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear2_category_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/blouse"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:src="@drawable/blouse" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="blouse"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/tunic"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/tunic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="tunics"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/tank"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/tank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="tanks"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear6_category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sandals"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:src="@drawable/sandals" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="sandals"
+                        android:fontFamily="@font/spartan"
+                        android:textColor="@color/colortext"
+                        android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/check_orders_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@color/colorPrimary"
+                android:text="check orders"
+                android:textSize="@dimen/_20sdp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:layout_below="@+id/check_orders_btn"
+                android:id="@+id/admin_logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@color/colorPrimary"
+                android:text="log out"
+                android:textSize="@dimen/_20sdp"
+                android:textAllCaps="false"/>
+
 
         </LinearLayout>
 

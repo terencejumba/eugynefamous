@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colormajor"
+    tools:context=".DressesActivity"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/r23"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/dresses_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:id="@+id/dresses_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
+            android:gravity="center"
+            android:text="Dresses"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+        <ImageView
+            android:id="@+id/dresses_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/_dresses_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/r23"
+        android:layout_marginLeft="@dimen/_10sdp"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="Dresses"
+
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_17sdp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dresseslist"
+        android:background="@color/colormajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_dresses_title"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/next_dresses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/dresseslist"/>
+
+</RelativeLayout>

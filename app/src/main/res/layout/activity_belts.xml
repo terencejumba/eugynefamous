@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeltsActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl19"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/belts_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"
+            />
+
+
+        <TextView
+            android:id="@+id/Belts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="Belts"
+            android:fontFamily="@font/alataregular"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+
+        <ImageView
+            android:id="@+id/belts_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/beltslist"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor"
+        android:layout_below="@id/rl19"/>
+
+    <Button
+        android:id="@+id/next_belts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/beltslist"/>
+
+
+</RelativeLayout>

@@ -10,10 +10,6 @@
             android:title="home"
             android:icon="@drawable/homeicon"/>
 
-        <item
-            android:id="@+id/nav_search"
-            android:title="search"
-            android:icon="@drawable/searchicon"/>
 
         <item
             android:id="@+id/nav_cart"
@@ -89,6 +85,26 @@
                     android:id="@+id/nav_socks"
                     android:title=" socks"
                     android:icon="@drawable/socks"/>
+
+                <item
+                    android:id="@+id/nav_skirt"
+                    android:title=" skirt"
+                    android:icon="@drawable/skirt"/>
+
+                <item
+                    android:id="@+id/nav_lingerie"
+                    android:title=" lingerie"
+                    android:icon="@drawable/lingerie"/>
+
+                <item
+                    android:id="@+id/nav_jumpsuits"
+                    android:title=" jumpsuits"
+                    android:icon="@drawable/jumpsuit"/>
+
+                <item
+                    android:id="@+id/nav_tops"
+                    android:title=" tees and tops"
+                    android:icon="@drawable/blouse"/>
 
 
             </group>

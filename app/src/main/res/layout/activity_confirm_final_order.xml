@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmFinalOrderActivity">
+    tools:context=".ConfirmFinalOrderActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
     <TextView
@@ -19,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="confirm your shipment"
-        android:textSize="10dp"
+        android:textSize="@dimen/_17sdp"
         android:textColor="@color/colorPrimary"
         android:textAlignment="center"
         android:gravity="center"
@@ -29,42 +31,48 @@
     <EditText
         android:id="@+id/shipment_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:inputType="textMultiLine"
         android:layout_below="@+id/txt"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:hint="your name"/>
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:hint="your name"
+        android:background="@layout/edittext_design"/>
 
     <EditText
         android:id="@+id/shipment_phone_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_50sdp"
         android:layout_below="@+id/shipment_name"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:inputType="number"
-        android:layout_marginRight="20dp"
-        android:hint="your phone number" />
+        android:background="@layout/edittext_design"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:hint="your phone number"/>
 
     <EditText
         android:id="@+id/shipment_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_50sdp"
         android:layout_below="@+id/shipment_phone_number"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@layout/edittext_design"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:hint="your home address" />
 
     <EditText
         android:id="@+id/shipment_city"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_50sdp"
         android:layout_below="@+id/shipment_address"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@layout/edittext_design"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:hint="your city name" />
 
 
@@ -80,11 +88,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/_20sdp"
         android:text="next"
+        android:background="@layout/button_indesign"
         android:layout_below="@+id/shipment_city"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
         android:textSize="20dp"/>
 
 

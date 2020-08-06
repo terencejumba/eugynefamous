@@ -5,79 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".common.RegisterActivity"
-    android:background="@layout/page_layout">
+    android:background="@color/colormajor">
 
     <TextView
+        android:id="@+id/reg_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
         android:fontFamily="@font/aclonica"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:textSize="40dp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textSize="@dimen/_40sdp"
         android:textColor="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/relogin_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/reg_text"
         android:hint="name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:background="@layout/edittext_design"
         android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colortext"
         android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/relogin_username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/relogin_name"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:hint="username"
         android:inputType="text"
         android:background="@layout/edittext_design"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/relogin_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/relogin_username"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:hint="email"
         android:inputType="textEmailAddress"
         android:background="@layout/edittext_design"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/relogin_phone_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/relogin_email"
         android:hint="phonenumber"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:inputType="number"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
         android:background="@layout/edittext_design"
-        android:textSize="18sp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"/>
 
 
@@ -85,17 +87,17 @@
     <EditText
         android:id="@+id/reglogin_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/relogin_phone_number"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:hint="password"
         android:inputType="number"
         android:background="@layout/edittext_design"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"/>
 
 
@@ -105,9 +107,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="register"
-        android:background="@layout/button_design"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="@dimen/_20sdp"/>
 
 </RelativeLayout>

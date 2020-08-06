@@ -4,27 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    tools:context=".CartActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
 
 
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary">
+        >
+
+        <ImageView
+            android:id="@+id/cart_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
 
 
         <TextView
             android:id="@+id/total_price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
             android:gravity="center"
             android:text="Total Price ="
             android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="20dp" />
+            android:layout_centerInParent="true"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
 
 
     </RelativeLayout>
@@ -34,13 +45,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:textAlignment="center"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/spartan"
         android:layout_centerVertical="true"
         android:text="congrats your final order has been placed successfully soon you will recieve your order, soon it will be verified"
-        android:textSize="20dp"
+        android:textSize="@dimen/_14sdp"
         android:visibility="gone"/>
 
 
@@ -48,7 +61,9 @@
         android:id="@+id/cart_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_below="@+id/rl1"
+        android:background="@color/colormajor"
         android:layout_above="@id/next_process_btn"/>
 
 
@@ -57,10 +72,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@layout/button_indesign"
         android:text="Next"
-        android:textColor="#fff"
-        android:textSize="20dp"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_15ssp"
         android:padding="10dp"
         android:layout_margin="10dp"/>
 

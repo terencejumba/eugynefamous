@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
@@ -29,21 +30,26 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Random;
 
 import quinton.terence.eugynefamous.common.LogInActivity;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
     //for getting intents
-    private String  CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
+    private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime, priority;
     private Button addNewProductBtn;
     private ImageView InputProductImage;
-    private EditText InputProductName, InputProductDesccription, InputProductPrice;
+    private EditText InputProductName, InputProductDesccription, InputProductPrice, InputProductPriority;
+    private TextView mens, womens;
+
+
+    private  String gender = "men";
 
     private ProgressDialog loadingbar;
 
     //variable for the gallery intent
-    private static final int GalleryPick = 1 ;
+    private static final int GalleryPick = 1;
 
     //variable for getting image uri
     private Uri ImageUri;
@@ -58,27 +64,30 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     private DatabaseReference Productsref;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
 
         //getting intent
-       CategoryName = getIntent().getExtras().get("category").toString();
+        CategoryName = getIntent().getExtras().get("category").toString();
 
-       //hooks for our storage reference
+        //hooks for our storage reference
         ProductImagesref = FirebaseStorage.getInstance().getReference().child("Product Images");
 
         //hooks for our database reference
-        Productsref = FirebaseDatabase.getInstance().getReference().child("Products");
+        Productsref = FirebaseDatabase.getInstance().getReference().child(CategoryName);
 
-       //hooks
+        //hooks
         addNewProductBtn = findViewById(R.id.add_new_product);
         InputProductName = findViewById(R.id.product_name);
         InputProductDesccription = findViewById(R.id.product_description);
         InputProductPrice = findViewById(R.id.product_price);
         InputProductImage = findViewById(R.id.select_product_image);
+        InputProductPriority = findViewById(R.id.product_priority);
+
+        mens = findViewById(R.id.product_male);
+        womens = findViewById(R.id.product_female);
 
         loadingbar = new ProgressDialog(this);
 
@@ -92,9 +101,34 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             }
         });
 
+        mens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                gender = "men";
+
+                addNewProductBtn.setText("add product (men)");
+
+            }
+        });
+
+        womens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                gender = "women";
+
+                addNewProductBtn.setText("add product (women)");
+
+            }
+        });
+
+
         addNewProductBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
                 ValidateProductData();
 
@@ -102,8 +136,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
     //function for opening gallery after user clicks on the image
@@ -123,7 +155,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == GalleryPick  && resultCode == RESULT_OK  && data != null){
+        if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
 
             //getting the image uri
             ImageUri = data.getData();
@@ -144,43 +176,62 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         Description = InputProductDesccription.getText().toString();
         Price = InputProductPrice.getText().toString();
         Pname = InputProductName.getText().toString();
+        priority = InputProductPriority.getText().toString();
 
 
         //verifying if not null
-        if (ImageUri == null){
+        if (ImageUri == null) {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product image required", Toast.LENGTH_SHORT).show();
 
-        }
-
-        else if (TextUtils.isEmpty(Description)){
+        } else if (TextUtils.isEmpty(Description)) {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product description required", Toast.LENGTH_SHORT).show();
 
-        }
-
-        else if (TextUtils.isEmpty(Price)){
+        } else if (TextUtils.isEmpty(Price)) {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product price required", Toast.LENGTH_SHORT).show();
 
-        }
-
-        else if (TextUtils.isEmpty(Pname)){
+        } else if (TextUtils.isEmpty(Pname)) {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product name required", Toast.LENGTH_SHORT).show();
 
         }
+        else  if (TextUtils.isEmpty(priority)){
 
-        else{
+            Toast.makeText(AdminAddNewProductActivity.this, "product priority required", Toast.LENGTH_SHORT).show();
+
+        }
+
+        else {
+
+            Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+                StoreProductInformation();
+
+
+
+
 
             //method for storing image info
-            StoreProductInformation();
+          // StoreProductInformation();
 
         }
 
     }
 
+
+
+
+
+
+
     private void StoreProductInformation() {
+
 
 
         loadingbar.setTitle("Add New Product");
@@ -197,12 +248,10 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         //getting current time
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-         saveCurrentTime = currentTime.format(calendar.getTime());
+        saveCurrentTime = currentTime.format(calendar.getTime());
 
-         //creating a custom random key
+        //creating a custom random key
         productRandomKey = saveCurrentDate + saveCurrentTime;
-
-
 
 
         //storing the image into our firebase storage
@@ -238,11 +287,10 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                     @Override
                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
 
-                        if (!task.isSuccessful()){
+                        if (!task.isSuccessful()) {
 
                             //throwing the exception
                             throw task.getException();
-
 
 
                         }
@@ -253,13 +301,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         return filePath.getDownloadUrl();
 
 
-
                     }
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
 
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
                             //getting the image link now for it to go to the database
                             downloadImageUrl = task.getResult().toString();
@@ -289,46 +336,49 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         HashMap<String, Object> productMap = new HashMap<>();
 
-        productMap.put("pid", productRandomKey );
-        productMap.put("date", saveCurrentDate );
-        productMap.put("time", saveCurrentTime );
-        productMap.put("description", Description );
-        productMap.put("image", downloadImageUrl );
-        productMap.put("Category", CategoryName );
-        productMap.put("price", Price );
-        productMap.put("pname", Pname );
+        productMap.put("pid", productRandomKey);
+        productMap.put("date", saveCurrentDate);
+        productMap.put("time", saveCurrentTime);
+        productMap.put("description", Description);
+        productMap.put("image", downloadImageUrl);
+        productMap.put("priority", priority);
+        productMap.put("category", CategoryName);
+        productMap.put("sex", gender);
+        productMap.put("price", Price);
+        productMap.put("pname", Pname);
 
-       Productsref.child(productRandomKey).updateChildren(productMap)
-               .addOnCompleteListener(new OnCompleteListener<Void>() {
-                   @Override
-                   public void onComplete(@NonNull Task<Void> task) {
+        Productsref.child(gender).child(productRandomKey).updateChildren(productMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
 
-                       if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                           Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
-
-
-                           startActivity(intent);
-
-                           loadingbar.dismiss();
-
-                           Toast.makeText(AdminAddNewProductActivity.this, " product is added successfully..", Toast.LENGTH_SHORT).show();
-
-                       }
-
-                       else {
-
-                           loadingbar.dismiss();
-
-                           //getting the error message
-                           String message = task.getException().toString();
-
-                           Toast.makeText(AdminAddNewProductActivity.this, "Error" +message , Toast.LENGTH_SHORT).show();
-
-                       }
+                            Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
 
 
-                   }
-               });
+                            startActivity(intent);
+
+                            loadingbar.dismiss();
+
+                            Toast.makeText(AdminAddNewProductActivity.this, " product is added successfully..", Toast.LENGTH_SHORT).show();
+
+                        } else {
+
+                            loadingbar.dismiss();
+
+                            //getting the error message
+                            String message = task.getException().toString();
+
+                            Toast.makeText(AdminAddNewProductActivity.this, "Error" + message, Toast.LENGTH_SHORT).show();
+
+                        }
+
+
+                    }
+                });
     }
+
+
+
 }

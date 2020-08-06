@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopsActtivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_10sdp">
+
+
+    <RelativeLayout
+        android:id="@+id/rl53"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/tops_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Tops and tees"
+            android:textAlignment="center"
+            android:fontFamily="@font/alataregular"
+            android:textStyle="bold"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_17sdp" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl53"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/blouses_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/alataregular"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_11ssp"
+                android:text=" blouses and button-down shirts"
+                />
+
+
+            <TextView
+                android:id="@+id/blouses_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:fontFamily="@font/alataregular"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/colortext"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_toRightOf="@+id/blouses_"
+                android:text=" show more"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/__blouses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blouses_"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+
+            <TextView
+                android:id="@+id/tanks_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/alataregular"
+                android:layout_below="@id/__blouses"
+                android:textColor="@color/colortext"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text=" tanks and camis"/>
+
+            <TextView
+                android:id="@+id/tanks_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/__blouses"
+                android:layout_marginLeft="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_toRightOf="@id/tanks_"
+                android:text=" show more"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:textSize="@dimen/_10sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/__tanks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@id/tanks_" />
+
+            <TextView
+                android:id="@+id/tunics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/__tanks"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text=" tunics" />
+
+            <TextView
+                android:id="@+id/tunics_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/__tanks"
+                android:layout_marginLeft="@dimen/_180sdp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/tunics"
+                android:text=" show more"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:textSize="@dimen/_10sdp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/__tunics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@id/tunics" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

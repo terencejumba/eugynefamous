@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colormajor"
+    tools:context=".womenSweaterActivity"
+    android:padding="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl29_"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/sweaterwomen_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:id="@+id/womensweater_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
+            android:gravity="center"
+            android:text="Sweaters"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/womensweater_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/womensweater_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl29_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text=" sweaters, hoods and jackets"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/womenssweaterlist_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor"
+        android:layout_below="@id/womensweater_s"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/next_womensweater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="next"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/womenssweaterlist_"/>
+
+
+</RelativeLayout>

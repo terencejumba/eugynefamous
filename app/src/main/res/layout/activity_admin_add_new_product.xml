@@ -4,31 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminAddNewProductActivity">
+    tools:context=".AdminAddNewProductActivity"
+    android:background="@color/colormajor">
+
 
 
     <ImageView
         android:id="@+id/select_product_image"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/_350sdp"
+        android:layout_height="@dimen/_200sdp"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:src="@drawable/photo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select_product_image"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          >
 
     <EditText
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/select_product_image"
+
         android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_20sdp"
         android:background="@layout/edittext_design"
         android:hint="product name"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"/>
 
     <EditText
         android:id="@+id/product_description"
@@ -36,39 +49,107 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_name"
         android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_20sdp"
         android:background="@layout/edittext_design"
         android:hint="product description"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"/>
 
     <EditText
         android:id="@+id/product_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_description"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_20sdp"
         android:hint="product price"
         android:background="@layout/edittext_design"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"/>
+
+    <EditText
+        android:id="@+id/product_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_price"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_20sdp"
+        android:hint="product priority"
+        android:background="@layout/edittext_design"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"/>
+
+
+    <TextView
+        android:id="@+id/product_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_priority"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_15sdp"
+
+        android:text="choose gender"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"/>
+
+
+
+            <TextView
+                android:id="@+id/product_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_gender"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:text="mens"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginRight="@dimen/_50sdp"/>
+
+
+            <TextView
+                android:id="@+id/product_female"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_gender"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_toRightOf="@+id/product_male"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:text="womens"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_50sdp"/>
+
 
     <Button
         android:id="@+id/add_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_price"
+        android:layout_below="@+id/product_male"
         android:text="add product"
-        android:background="@layout/button_design"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:padding="17dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:background="@layout/button_indesign"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:padding="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_18ssp"
         android:textAllCaps="false"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

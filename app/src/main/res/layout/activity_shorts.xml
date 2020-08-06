@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShortsActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_10sdp">
+
+
+
+    <RelativeLayout
+        android:id="@+id/r21"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/shorts_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/shorts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Shorts"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/alataregular"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r21"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/_shorts_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="Men Shorts"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_17sdp" />
+
+    <TextView
+        android:id="@+id/_moree_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_140sdp"
+        android:layout_toRightOf="@+id/_shorts_title"
+        android:text="show more"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_10sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shortslist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_shorts_title"/>
+
+
+    <TextView
+        android:id="@+id/women_shorts_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="Women Shorts"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        android:layout_below="@+id/shortslist"
+        android:textSize="@dimen/_17sdp" />
+
+    <TextView
+        android:id="@+id/women_shorts_more_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_120sdp"
+        android:text="show more"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:layout_toRightOf="@+id/women_shorts_title"
+        android:layout_below="@+id/shortslist"
+        android:textSize="@dimen/_10sdp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/women_shortslist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/women_shorts_title"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

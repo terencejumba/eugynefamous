@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenSandalActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl31_"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/mensandal_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:fontFamily="@font/alataregular"
+            android:layout_centerInParent="true"
+            android:text="Sandals"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+        <ImageView
+            android:id="@+id/mensandal_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/mensandals_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mens sandals"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textColor="@color/colortext"
+        android:layout_below="@id/rl31_"
+        android:textSize="@dimen/_17sdp"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/_menssandallist_"
+        android:background="@color/colormajor"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mensandals_"/>
+
+    <Button
+        android:id="@+id/next_mensandal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/_menssandallist_"/>
+
+</RelativeLayout>

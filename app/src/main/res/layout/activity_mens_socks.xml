@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MensSocksActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl33"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/mensocks_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="socks"
+            android:fontFamily="@font/alataregular"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+        <ImageView
+            android:id="@+id/mensocks_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/menssocks_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mens socks"
+        android:textStyle="bold"
+        android:layout_below="@id/rl33"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menssockslist_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:background="@color/colormajor"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menssocks_"/>
+
+    <Button
+        android:id="@+id/next_mensocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/menssockslist_"/>
+
+</RelativeLayout>

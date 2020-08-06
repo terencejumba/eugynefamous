@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SocksActivity"
+    android:padding="@dimen/_5sdp"
+    android:background="@color/colormajor">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl18"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/socks_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:id="@+id/Socks_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/alataregular"
+                    android:textStyle="bold"
+                    android:text="Socks"
+                    android:textAlignment="center"
+                    android:textColor="@color/colortext"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/men_Socks_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/rl18"
+                android:fontFamily="@font/alataregular"
+                android:text="men socks"
+                android:textStyle="bold"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/men_more_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_below="@+id/rl18"
+                android:layout_marginLeft="@dimen/_140sdp"
+                android:layout_toRightOf="@+id/men_Socks_title"
+
+                android:fontFamily="@font/alataregular"
+                android:text="show more"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sockslist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/men_Socks_title"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/women_Socks_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/sockslist"
+                android:text="women socks"
+                android:textStyle="bold"
+                android:fontFamily="@font/alataregular"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/women_more_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_below="@+id/sockslist"
+                android:layout_toRightOf="@+id/women_Socks_title"
+                android:layout_marginLeft="@dimen/_120sdp"
+                android:text="show more"
+                android:fontFamily="@font/alataregular"
+
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_10sdp" />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/womensockslist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/women_Socks_title"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

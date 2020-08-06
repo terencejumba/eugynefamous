@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoesActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl31"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/shoes_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:id="@+id/shoes_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Shoes"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/alataregular"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl31"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/shoes_title_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/alataregular"
+                android:textColor="@color/colortext"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="mens shoes"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/show_more_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:layout_toRightOf="@id/shoes_title_"
+                android:text="Show more"
+                android:textSize="@dimen/_10sdp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shoeslist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shoes_title_"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/womnshoes_title_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shoeslist"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="womens shoes"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/womnshoes_more_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shoeslist"
+                android:layout_marginLeft="@dimen/_120sdp"
+                android:fontFamily="@font/alataregular"
+                android:layout_marginTop="@dimen/_17sdp"
+                android:textColor="@color/colortext"
+                android:layout_toRightOf="@id/womnshoes_title_"
+                android:text="show more"
+                android:textSize="@dimen/_10sdp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/women_shoeslist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/womnshoes_title_"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/womnsandal_title_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/women_shoeslist"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/colortext"
+                android:textStyle="bold"
+                android:fontFamily="@font/alataregular"
+                android:text="womens sandals"
+                android:textSize="@dimen/_17sdp" />
+
+            <TextView
+                android:id="@+id/womnsandal_more_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/women_shoeslist"
+                android:layout_marginLeft="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+
+                android:layout_toRightOf="@id/womnsandal_title_"
+                android:text="show more"
+                android:textColor="@color/colortext"
+                android:fontFamily="@font/alataregular"
+
+                android:textSize="@dimen/_10sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/women_sandallist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/womnsandal_title_"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:id="@+id/mnsandal_title_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/women_sandallist"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="mens sandals"
+                android:fontFamily="@font/alataregular"
+                android:textColor="@color/colortext"
+                android:textStyle="bold"
+                android:textSize="@dimen/_17sdp" />
+
+            <TextView
+                android:id="@+id/mnsandal_more_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/women_sandallist"
+                android:layout_marginLeft="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_toRightOf="@id/mnsandal_title_"
+                android:text="show more"
+                android:fontFamily="@font/alataregular"
+                android:textColor="@color/colortext"
+
+                android:textSize="@dimen/_10sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/men_sandallist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mnsandal_title_"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

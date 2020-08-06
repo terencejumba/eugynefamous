@@ -2,12 +2,14 @@ package quinton.terence.eugynefamous.Model;
 
 public class products {
 
-    private String pname, description, price, image, category, pid, date, time;
+    private String pname, description, price, image, category, pid, date, time, sex;
 
     public products() {
     }
 
-    public products(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+
+
+    public products(String pname, String description, String price, String image, String category, String pid, String date, String time , String sex) {
         this.pname = pname;
         this.description = description;
         this.price = price;
@@ -15,7 +17,9 @@ public class products {
         this.category = category;
         this.pid = pid;
         this.date = date;
+        this.sex = sex;
         this.time = time;
+
     }
 
     public String getPname() {
@@ -80,5 +84,13 @@ public class products {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }

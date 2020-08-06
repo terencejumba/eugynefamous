@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="#fff"
+    android:background="@color/colorpprimary"
     android:paddingLeft="5dp">
 
 
@@ -11,19 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="vrooom!!"
-        android:textSize="20sp"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_20ssp"
         android:fontFamily="@font/aclonica"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/_10sdp"
         />
 
     <TextView
         android:id="@+id/nav_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
         android:text="eugynefamous"
         android:fontFamily="@font/aclonica"
-        android:textSize="18sp"
+        android:textSize="@dimen/_18ssp"
         android:layout_above="@id/menu_slogan"
         />
 
@@ -36,11 +38,12 @@
         android:src="@drawable/usericon"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
-        android:layout_above="@id/nav_username"/>
+        android:layout_above="@id/nav_username"
+        android:visibility="gone"/>
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="175dp"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_175sdp"
         android:src="@drawable/deliveryicon"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>

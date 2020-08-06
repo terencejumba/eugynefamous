@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LingerieActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl51"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentTop="true"
+        >
+
+        <ImageView
+            android:id="@+id/lingerie_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Lingerie, sleep and lounge"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_20sdp"
+            android:fontFamily="@font/alataregular"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+
+        <ImageView
+            android:id="@+id/lingerie_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/lingerie_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text=" Lingerie, sleep and lounge"
+        android:textStyle="bold"
+        android:fontFamily="@font/alataregular"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@id/rl51"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lingerielist_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor"
+        android:layout_below="@id/lingerie_"/>
+
+    <Button
+        android:id="@+id/next_lingerie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/lingerielist_"/>
+
+</RelativeLayout>

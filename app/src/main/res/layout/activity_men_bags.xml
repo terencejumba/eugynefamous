@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenBagsActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl41"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/menbags_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Bags"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:fontFamily="@font/alataregular"
+            android:textSize="@dimen/_20sdp" />
+
+
+        <ImageView
+            android:id="@+id/search_menbags"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_alignParentRight="true" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/men_bags_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Bags"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:fontFamily="@font/alataregular"
+        android:textStyle="bold"
+        android:layout_below="@id/rl41"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/__bagslist_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor"
+        android:layout_below="@id/men_bags_"/>
+
+    <Button
+        android:id="@+id/next_menbag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:text="next"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/__bagslist_"/>
+
+
+
+
+</RelativeLayout>

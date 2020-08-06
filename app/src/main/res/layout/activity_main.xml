@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colormajor">
 
     <Button
         android:id="@+id/main_register"
@@ -13,18 +14,26 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:text="register"
-        android:background="@layout/button_design"/>
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
+        android:textStyle="bold"
+        android:background="@layout/button_indesign"
+        android:textSize="@dimen/_12sdp"/>
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="log in"
-        android:textColor="#000"
+        android:textColor="@color/colortext"
         android:layout_below="@+id/main_register"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@layout/button_design"/>
+        android:fontFamily="@font/alataregular"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:background="@layout/button_indesign"/>
 
 
 </RelativeLayout>

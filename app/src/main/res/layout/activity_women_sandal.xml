@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WomenSandalActivity"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:id="@+id/rl32_"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/womensandal_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="Sandals"
+            android:textStyle="bold"
+            android:fontFamily="@font/alataregular"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:id="@+id/womensandal_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/searchicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/womensandals_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="women sandals"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_16sdp"
+        android:layout_below="@id/rl32_"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginTop="@dimen/_16sdp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/_womenssandallist_"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor"
+        android:layout_below="@id/womensandals_"/>
+
+    <Button
+        android:id="@+id/next_womensandal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="next"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/_womenssandallist_"/>
+
+
+</RelativeLayout>

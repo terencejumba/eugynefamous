@@ -179,8 +179,14 @@ public class PaymentDetailsActivity extends AppCompatActivity {
 
                         startActivity(new Intent(this, FinalPaymentDetails.class)
                                 .putExtra("PaymentDetails", paymentDetails)
-                                .putExtra("PaymentAmount", TotalAmount)  //sending the total amount which has not yet been converted to usd
+                                .putExtra("PaymentAmount", TotalAmount) //sending the total amount which has not yet been converted to usd
+                                .putExtra("name", name)
+                                .putExtra("phone", phone)
+                                .putExtra("address", address)
+                                .putExtra("home", home)
+
                         );
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();

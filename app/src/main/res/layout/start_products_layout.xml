@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_270sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="#fff">
+
+
+        <ImageView
+            android:id="@+id/start_product_img"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/start_product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/start_product_img"
+            android:text="scater"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:fontFamily="@font/alataregular"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <RatingBar
+            android:id="@+id/stsrt_product_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_below="@+id/start_product_title"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:rating="4"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <TextView
+            android:id="@+id/start_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="here is what we sell"
+            android:layout_below="@id/stsrt_product_rating"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/colortext"
+            android:fontFamily="@font/alataregular"
+            android:layout_marginTop="@dimen/_3sdp"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

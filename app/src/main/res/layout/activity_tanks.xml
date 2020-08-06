@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colormajor"
+    android:padding="@dimen/_10sdp"
+    tools:context=".TanksActivity">
+
+    <RelativeLayout
+        android:id="@+id/r56"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/tanks_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:id="@+id/tanks_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
+            android:gravity="center"
+            android:text="tanks and camis"
+            android:textAlignment="center"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/tanks_search"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/searchicon" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/_tanks_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/r56"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:fontFamily="@font/alataregular"
+        android:text="tanks and camis"
+
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_16sdp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tankslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_tanks_title"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colormajor" />
+
+    <Button
+        android:id="@+id/next_tanks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="next"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/tankslist"/>
+
+
+</RelativeLayout>
