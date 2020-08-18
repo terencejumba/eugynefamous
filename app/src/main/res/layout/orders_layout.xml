@@ -51,7 +51,7 @@
             android:layout_below="@+id/order_user_name"/>
 
         <TextView
-            android:id="@+id/order_pay_state"
+            android:id="@+id/order_pay_method"
             android:layout_width="@dimen/_160sdp"
             android:layout_height="wrap_content"
             android:text="pay state"
@@ -64,7 +64,7 @@
             android:layout_below="@+id/order_total_price"/>
 
         <TextView
-            android:id="@+id/order_pay_id"
+            android:id="@+id/order_pay_phone"
             android:layout_width="@dimen/_160sdp"
             android:layout_height="wrap_content"
             android:text="pay id"
@@ -74,7 +74,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/alataregular"
             android:textStyle="bold"
-            android:layout_below="@+id/order_pay_state"/>
+            android:layout_below="@+id/order_pay_method"/>
 
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/alataregular"
             android:textStyle="bold"
-            android:layout_below="@id/order_pay_id"/>
+            android:layout_below="@id/order_pay_phone"/>
 
         <TextView
             android:id="@+id/order_date_time"

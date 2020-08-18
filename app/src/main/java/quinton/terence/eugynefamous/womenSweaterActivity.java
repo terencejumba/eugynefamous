@@ -6,12 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -19,6 +23,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.lang.ref.WeakReference;
+
+import quinton.terence.eugynefamous.Admin.AdminMaintainProductsActivity;
 import quinton.terence.eugynefamous.Model.products;
 import quinton.terence.eugynefamous.ViewHolder.ProductViewHolder;
 import quinton.terence.eugynefamous.productsdetails.ProductDetailsActivity;
@@ -30,16 +37,43 @@ public class womenSweaterActivity extends AppCompatActivity {
     private ImageView backBtn, searchBtn;
     private Button nextBtn;
 
+    private ProgressBar progressBar;
+
+    //getting intent
+    private String type = "";
+
+    //firebase variables
+    DatabaseReference sweaterRefe;
+    FirebaseRecyclerAdapter<products, ProductViewHolder> adapter;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_women_sweater);
+        //removing the top status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //hides the action bar
+        getSupportActionBar().hide();
 
         sweaterList = findViewById(R.id.womenssweaterlist_);
         sweaterList.setLayoutManager(new LinearLayoutManager(this));
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if(bundle != null){
+
+            type = getIntent().getExtras().get("WomensweaterType").toString();
+
+        }
+
+
         backBtn = findViewById(R.id.sweaterwomen_back);
         searchBtn = findViewById(R.id.womensweater_search);
+        nextBtn = findViewById(R.id.next_womensweater);
+        progressBar = findViewById(R.id.progress_bar_womensweater);
 
 
 
@@ -51,6 +85,7 @@ public class womenSweaterActivity extends AppCompatActivity {
 
                 intent.putExtra("sex", "women");
                 intent.putExtra("category", "sweaters");
+                intent.putExtra("nextType", type);
 
                 startActivity(intent);
 
@@ -64,13 +99,16 @@ public class womenSweaterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(womenSweaterActivity.this, SearchProductsActivity.class);
+                if (!type.equals("Admin")) {
 
-                intent.putExtra("sex", "women");
-                intent.putExtra("category", "sweaters");
+                    Intent intent = new Intent(womenSweaterActivity.this, SearchProductsActivity.class);
 
-                startActivity(intent);
+                    intent.putExtra("sex", "women");
+                    intent.putExtra("category", "sweaters");
 
+                    startActivity(intent);
+
+                }
 
 
             }
@@ -94,66 +132,190 @@ public class womenSweaterActivity extends AppCompatActivity {
         super.onStart();
 
 
-        DatabaseReference sweaterRefe = FirebaseDatabase.getInstance().getReference().child("sweaters").child("women");
+        womenSweaterAsyncTask task =new womenSweaterAsyncTask(this);
+        task.execute(5);
 
-        FirebaseRecyclerOptions<products> sweateroptions = new
-                FirebaseRecyclerOptions.Builder<products>()
-                .setQuery(sweaterRefe, products.class)//the category shows what you want to show in the recycler view here we are searching using the pname
-//                .setQuery(shirtsRef.orderByChild("priority").startAt("1").endAt("1"), products.class)
-                .build();
-
-
-        FirebaseRecyclerAdapter<products, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<products, ProductViewHolder>(sweateroptions) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final products model) {
-
-                        holder.txtProductName.setText(model.getPname());
-                        holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText(model.getPrice() + "Ksh");
-
-                        Picasso.get().load(model.getImage()).into(holder.imageView);
-
-
-                        //setting a click listener to the relative layout
-
-                        holder.itemView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                                Intent intent = new Intent(womenSweaterActivity.this, ProductDetailsActivity.class);
-
-                                intent.putExtra("pid", model.getPid());
-                                intent.putExtra("category", model.getCategory());
-                                intent.putExtra("sex", model.getSex());
-
-                                startActivity(intent);
-
-
-                            }
-                        });
-
-
-                    }
-
-                    @NonNull
-                    @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_layout, parent, false);
-
-                        ProductViewHolder holder = new ProductViewHolder(view);
-
-                        return holder;
-
-
-                    }
-                };
-
-        sweaterList.setAdapter(adapter);
-        adapter.startListening();
 
 
     }
+
+    private  class  womenSweaterAsyncTask extends AsyncTask<Integer, Integer, String>{
+
+        private WeakReference<womenSweaterActivity> activityWeakReference;
+
+
+        public womenSweaterAsyncTask(womenSweaterActivity activity) {
+
+            activityWeakReference = new WeakReference<womenSweaterActivity>(activity);
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            womenSweaterActivity activity = activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing()) {
+
+                return;
+
+            }
+
+
+            sweaterList.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+
+            Toast.makeText(activity, "loading...", Toast.LENGTH_SHORT).show();
+
+
+
+        }
+
+        @Override
+        protected String doInBackground(Integer... integers) {
+
+            for (int i = 0; i < integers[0]; i++) {
+
+                publishProgress( (i * 100) / integers[0] );
+
+                if (i == 2){
+
+                    sweaterRefe = FirebaseDatabase.getInstance().getReference().child("sweaters").child("women");
+
+                    FirebaseRecyclerOptions<products> sweateroptions = new
+                            FirebaseRecyclerOptions.Builder<products>()
+                            .setQuery(sweaterRefe.orderByChild("priority").startAt("1").endAt("1"), products.class)//the category shows what you want to show in the recycler view here we are searching using the pname
+//                .setQuery(shirtsRef.orderByChild("priority").startAt("1").endAt("1"), products.class)
+                            .build();
+
+
+                    adapter =
+                            new FirebaseRecyclerAdapter<products, ProductViewHolder>(sweateroptions) {
+                                @Override
+                                protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final products model) {
+
+                                    holder.txtProductName.setText(model.getPname());
+                                    holder.txtProductDescription.setText(model.getDescription());
+                                    holder.txtProductPrice.setText(model.getPrice() + "Ksh");
+
+                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+
+
+                                    //setting a click listener to the relative layout
+
+                                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            if (type.equals("Admin")){
+
+
+                                                Intent intent = new Intent(womenSweaterActivity.this, AdminMaintainProductsActivity.class);
+
+                                                intent.putExtra("pid", model.getPid());
+                                                intent.putExtra("category", model.getCategory());
+                                                intent.putExtra("sex", model.getSex());
+
+                                                startActivity(intent);
+
+
+                                            }
+                                            else {
+
+                                                Intent intent = new Intent(womenSweaterActivity.this, ProductDetailsActivity.class);
+
+                                                intent.putExtra("pid", model.getPid());
+                                                intent.putExtra("category", model.getCategory());
+                                                intent.putExtra("sex", model.getSex());
+
+                                                startActivity(intent);
+
+
+                                            }
+
+
+
+
+                                        }
+                                    });
+
+
+                                }
+
+                                @NonNull
+                                @Override
+                                public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+
+                                    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_layout, parent, false);
+
+                                    ProductViewHolder holder = new ProductViewHolder(view);
+
+                                    return holder;
+
+
+                                }
+                            };
+
+
+                }
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            return "updated";
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+
+            womenSweaterActivity activity = activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing()) {
+
+                return;
+
+            }
+
+            progressBar.setProgress(values[0]);
+
+
+        }
+
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            womenSweaterActivity activity = activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing()) {
+
+                return;
+
+            }
+
+            sweaterList.setAdapter(adapter);
+            adapter.startListening();
+
+            sweaterList.setVisibility(View.VISIBLE);
+
+            progressBar.setProgress(0);
+            progressBar.setVisibility(View.GONE);
+
+            Toast.makeText(activity, s, Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
 }

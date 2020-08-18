@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BeltsActivity"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_5sdp">
 
     <RelativeLayout
@@ -52,14 +52,23 @@
 
     </RelativeLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_bar_belts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_below="@id/rl19"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/beltslist"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_height="wrap_content"
-        android:background="@color/colormajor"
-        android:layout_below="@id/rl19"/>
+        android:layout_below="@id/progress_bar_belts"/>
 
     <Button
         android:id="@+id/next_belts"

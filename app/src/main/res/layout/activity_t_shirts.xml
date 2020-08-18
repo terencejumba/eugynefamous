@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".tShirtsActivity"
     android:padding="@dimen/_10sdp"
-    android:background="@color/colormajor">
+    android:background="@color/colorhome">
 
 
     <RelativeLayout
@@ -50,14 +50,32 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl16"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar_tshirt"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tshirtslist"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/_10sdp"
-        android:background="@color/colormajor"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl16"/>
+        android:layout_below="@id/progress_bar_tshirt"/>
 
 
 
@@ -74,5 +92,10 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_below="@+id/tshirtslist"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

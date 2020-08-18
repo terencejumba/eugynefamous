@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     tools:context=".DressesActivity"
     android:padding="@dimen/_5sdp">
 
@@ -49,11 +49,22 @@
 
     </RelativeLayout>
 
+
+    <ProgressBar
+        android:id="@+id/progress_bar_dresses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="invisible"
+        android:layout_below="@+id/r23"
+        tools:visibility="visible"/>
+
     <TextView
         android:id="@+id/_dresses_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/r23"
+        android:layout_below="@id/progress_bar_dresses"
         android:layout_marginLeft="@dimen/_10sdp"
 
         android:layout_marginTop="@dimen/_10sdp"
@@ -66,7 +77,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dresseslist"
-        android:background="@color/colormajor"
+        android:background="@color/colorhome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/_dresses_title"

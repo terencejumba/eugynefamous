@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".SweaterActivity"
     android:padding="@dimen/_10sdp"
-    android:background="@color/colormajor">
+    android:background="@color/colorhome">
+
+
 
     <RelativeLayout
         android:id="@+id/r23"
@@ -38,6 +40,8 @@
 
     </RelativeLayout>
 
+
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,6 +52,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ProgressBar
+                android:id="@+id/progress_bar_sweater"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
             <TextView
                 android:id="@+id/mensweat_ers"
                 android:layout_width="wrap_content"
@@ -56,6 +69,7 @@
                 android:textAlignment="center"
                 android:gravity="center"
                 android:textStyle="bold"
+                android:layout_below="@+id/progress_bar_sweater"
                 android:textColor="@color/colortext"
                 android:fontFamily="@font/alataregular"
                 android:textSize="@dimen/_14ssp"
@@ -63,22 +77,23 @@
 
             <TextView
                 android:id="@+id/mensweat_ers_more"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="show more"
-                android:textColor="@color/colortext"
-                android:textAlignment="center"
-                android:layout_toRightOf="@+id/mensweat_ers"
-                android:gravity="center"
-                android:textSize="@dimen/_10ssp"
-                android:fontFamily="@font/alataregular"
+                android:layout_below="@+id/progress_bar_sweater"
+                android:layout_marginLeft="@dimen/_35sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginLeft="@dimen/_50sdp"/>
+                android:layout_toRightOf="@+id/mensweat_ers"
+                android:fontFamily="@font/alataregular"
+                android:gravity="center"
+                android:text="show more"
+                android:textAlignment="center"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_10ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sweatersslist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_290sdp"
                 android:layout_below="@+id/mensweat_ers"
                 android:layout_marginTop="@dimen/_10sdp"/>
 
@@ -109,14 +124,14 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/alataregular"
                 android:textColor="@color/colortext"
-                android:layout_marginLeft="@dimen/_37sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_below="@id/sweatersslist"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/womensweatersslist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_290sdp"
                 android:layout_below="@+id/womensweat_ers"
                 android:layout_marginTop="@dimen/_10sdp"
                 />

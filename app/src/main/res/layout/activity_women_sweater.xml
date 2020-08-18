@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     tools:context=".womenSweaterActivity"
     android:padding="@dimen/_10sdp">
 
@@ -18,6 +18,7 @@
             android:id="@+id/sweaterwomen_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:src="@drawable/back"
             android:layout_centerVertical="true"/>
 
@@ -48,13 +49,31 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl29_"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_womensweater"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/womensweater_s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl29_"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/progress_bar_womensweater"
+        android:layout_marginTop="@dimen/_5sdp"
         android:text=" sweaters, hoods and jackets"
         android:textColor="@color/colortext"
         android:textSize="@dimen/_14sdp"
@@ -65,7 +84,6 @@
         android:id="@+id/womenssweaterlist_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colormajor"
         android:layout_below="@id/womensweater_s"
         android:layout_marginTop="@dimen/_10sdp" />
 
@@ -83,5 +101,8 @@
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_below="@+id/womenssweaterlist_"/>
 
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

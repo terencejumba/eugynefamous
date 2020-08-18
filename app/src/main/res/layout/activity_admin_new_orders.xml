@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminNewOrdersActivity"
-    android:background="@color/colormajor"
-    android:padding="@dimen/_5sdp">
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    tools:context=".Admin.AdminNewOrdersActivity">
 
     <RelativeLayout
         android:id="@+id/rl11"
@@ -20,23 +20,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:gravity="center"
             android:fontFamily="@font/alataregular"
-            android:textColor="@color/colortext"
+            android:gravity="center"
             android:text="new orders"
             android:textAlignment="center"
+            android:textColor="@color/colortext"
             android:textSize="@dimen/_20sdp" />
 
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/orders_list"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colormajor"
-        android:layout_below="@+id/rl11"
-        />
+        android:layout_below="@id/rl11">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orders_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

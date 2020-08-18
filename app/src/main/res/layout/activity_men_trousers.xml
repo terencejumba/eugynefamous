@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenTrousersActivity"
-    android:background="@color/colormajor"
-    android:padding="@dimen/_5sdp">
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    tools:context=".MenTrousersActivity">
 
     <RelativeLayout
         android:id="@+id/rl38"
@@ -19,19 +19,19 @@
             android:id="@+id/mentrouser_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
             android:gravity="center"
             android:text="Trousers"
             android:textAlignment="center"
-            android:fontFamily="@font/alataregular"
             android:textColor="@color/colortext"
             android:textSize="@dimen/_20sdp" />
 
@@ -39,49 +39,70 @@
             android:id="@+id/mentrouser_search"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
-            android:src="@drawable/searchicon"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/_5sdp"/>
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/searchicon" />
 
 
     </RelativeLayout>
 
-
-    <TextView
-        android:id="@+id/mentrouser_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colortext"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:text="men trouser"
-        android:fontFamily="@font/alataregular"
-        android:textStyle="bold"
-        android:layout_below="@id/rl38"
-        android:layout_marginTop="@dimen/_10sdp"/>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mentrouserlist_"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:background="@color/colormajor"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mentrouser_"/>
+        android:layout_below="@+id/rl38">
 
-    <Button
-        android:id="@+id/next_mentrouser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colortext"
-        android:text="next"
-        android:textSize="@dimen/_14sdp"
-        android:fontFamily="@font/alataregular"
-        android:background="@layout/button_indesign"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@+id/mentrouserlist_"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_menTrouser"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/mentrouser_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_bar_menTrouser"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/alataregular"
+                android:text="men trouser"
+                android:textColor="@color/colortext"
+                android:textStyle="bold" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mentrouserlist_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mentrouser_"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+            <Button
+                android:id="@+id/next_mentrouser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mentrouserlist_"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@layout/button_indesign"
+                android:fontFamily="@font/alataregular"
+                android:text="next"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

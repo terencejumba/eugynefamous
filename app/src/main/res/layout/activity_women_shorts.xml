@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".WomenShortsActivity"
     android:padding="@dimen/_5sdp"
-    android:background="@color/colormajor">
+    android:background="@color/colorhome">
 
     <RelativeLayout
         android:id="@+id/rl44"
@@ -49,6 +49,27 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl44"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar_womenshort"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
 
     <TextView
         android:id="@+id/womensshort_"
@@ -59,15 +80,14 @@
         android:textSize="@dimen/_14sdp"
         android:fontFamily="@font/alataregular"
         android:textColor="@color/colortext"
-        android:layout_below="@id/rl44"
-        android:layout_marginTop="@dimen/_10sdp"/>
+        android:layout_below="@id/progress_bar_womenshort"
+        android:layout_marginTop="@dimen/_5sdp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/womensshortslist_"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
-        android:background="@color/colormajor"
         android:layout_height="wrap_content"
         android:layout_below="@id/womensshort_"/>
 
@@ -84,5 +104,9 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_below="@+id/womensshortslist_"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

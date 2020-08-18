@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_5sdp">
 
 
@@ -13,7 +13,7 @@
         android:id="@+id/app_bar_settings"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:background="@color/colormajor">
+        android:background="@color/colorhome">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_settings"
@@ -55,13 +55,22 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_below="@id/app_bar_settings">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_below="@+id/app_bar_settings"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:src="@drawable/usericon" />
 
     <TextView
@@ -146,5 +155,9 @@
 
         android:text="set security question"
         android:textColor="@color/colortext" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

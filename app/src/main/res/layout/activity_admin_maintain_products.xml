@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    app:cardElevation="@dimen/_15ssp"
+    tools:context=".Admin.AdminMaintainProductsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorhome"
+            android:padding="@dimen/_10sdp">
+
+
+            <ImageView
+                android:id="@+id/maintain_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/maintain_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_image"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@layout/edittext_design"
+                android:fontFamily="@font/alataregular"
+                android:hint="product name.."
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/colortext"
+                android:textColorHint="@color/colortext"
+                android:textSize="@dimen/_13sdp" />
+
+
+            <EditText
+                android:id="@+id/maintain_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_name"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@layout/edittext_design"
+                android:fontFamily="@font/alataregular"
+                android:hint="product description.."
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/colortext"
+                android:textColorHint="@color/colortext"
+                android:textSize="@dimen/_13sdp" />
+
+            <EditText
+                android:id="@+id/maintain_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_description"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@layout/edittext_design"
+                android:fontFamily="@font/alataregular"
+                android:hint="product price.."
+                android:inputType="number"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/colortext"
+                android:textColorHint="@color/colortext"
+                android:textSize="@dimen/_13sdp" />
+
+            <EditText
+                android:id="@+id/maintain_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_price"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@layout/edittext_design"
+                android:fontFamily="@font/alataregular"
+                android:hint="product priority.."
+                android:inputType="number"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/colortext"
+                android:textColorHint="@color/colortext"
+                android:textSize="@dimen/_13sdp" />
+
+
+            <Button
+                android:id="@+id/maintain_apply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_priority"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:background="@layout/button_indesign"
+                android:padding="@dimen/_17sdp"
+                android:text="apply changes"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_18ssp" />
+
+            <Button
+                android:id="@+id/maintain_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_apply"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:background="@layout/button_indesign"
+                android:padding="@dimen/_17sdp"
+                android:text="delete"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_18ssp" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colormajor"
+
     tools:context=".HomeActivity"
     tools:openDrawer="start">
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/colorPrimary"
+        android:background="@color/lightWhite"
         android:theme="@style/navigationTheme"
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/main_menu" />
@@ -24,25 +24,53 @@
         android:id="@+id/content_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorhome"
         android:padding="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:id="@+id/rHome"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
 
         <ImageView
             android:id="@+id/menuicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:src="@drawable/menuicon" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/menuone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eugyne Famous"
+                android:textSize="@dimen/_20sdp"
+                android:fontFamily="@font/aclonica"
+                android:textColor="@color/colortext"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/menuicon"
+            android:layout_below="@+id/rHome"
             android:layout_marginTop="@dimen/_10sdp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:visibility="invisible"
+                    tools:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/shirts__"
@@ -53,8 +81,8 @@
                     android:layout_marginLeft="@dimen/_10ssp"
                     android:textColor="@color/colortext"
                     android:textSize="@dimen/_16ssp"
-
-                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_below="@+id/progress_bar_home"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:text="shirts" />
 
                 <TextView
@@ -65,15 +93,16 @@
                     android:fontFamily="@font/alataregular"
                    android:layout_marginLeft="@dimen/_160sdp"
                     android:textSize="@dimen/_13ssp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_below="@+id/progress_bar_home"
                     android:textColor="@color/colortext"
                     android:text="show more" />
 
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclermenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_290sdp"
                     android:layout_below="@+id/shirts__"
                     android:layout_marginTop="@dimen/_20sdp"
                     />
@@ -109,8 +138,9 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/short_recycler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_290sdp"
+                    android:padding="@dimen/_5sdp"
                     android:layout_below="@+id/shorts__"
                     android:layout_marginTop="@dimen/_20sdp" />
 
@@ -144,8 +174,8 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/shoes_recycler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_290sdp"
                     android:layout_below="@+id/shoes__"
                     android:layout_marginTop="20dp"/>
 
@@ -178,8 +208,8 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/trouser_recycler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_290sdp"
                     android:layout_below="@+id/trouser__"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:scrollbars="vertical" />
@@ -214,8 +244,8 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/tshirts_recycler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_290sdp"
                     android:layout_below="@+id/tshirts__"
                     android:layout_marginTop="@dimen/_20sdp"/>
 
@@ -225,7 +255,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/_400sdp"
+                    android:visibility="gone"
                     android:layout_marginLeft="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_100sdp"
                     android:src="@drawable/cart" />

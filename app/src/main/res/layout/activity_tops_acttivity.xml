@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TopsActtivity"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_10sdp">
 
 
@@ -50,13 +50,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ProgressBar
+                android:id="@+id/progress_bar_tops"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
             <TextView
                 android:id="@+id/blouses_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/alataregular"
                 android:textColor="@color/colortext"
+                android:layout_below="@+id/progress_bar_tops"
+                android:textStyle="bold"
                 android:textSize="@dimen/_11ssp"
                 android:text=" blouses and button-down shirts"
                 />
@@ -70,7 +81,8 @@
                 android:fontFamily="@font/alataregular"
                 android:textSize="@dimen/_10sdp"
                 android:textColor="@color/colortext"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_below="@+id/progress_bar_tops"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:layout_toRightOf="@+id/blouses_"
                 android:text=" show more"
                 />
@@ -90,6 +102,7 @@
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/alataregular"
                 android:layout_below="@id/__blouses"
+                android:textStyle="bold"
                 android:textColor="@color/colortext"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text=" tanks and camis"/>
@@ -121,6 +134,7 @@
                 android:layout_below="@id/__tanks"
                 android:textColor="@color/colortext"
                 android:fontFamily="@font/alataregular"
+                android:textStyle="bold"
                 android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text=" tunics" />

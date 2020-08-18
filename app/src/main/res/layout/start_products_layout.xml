@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="@dimen/_210sdp"
+    android:layout_height="@dimen/_280sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
+    app:cardElevation="@dimen/_8sdp"
     app:cardCornerRadius="@dimen/_8sdp">
 
     <RelativeLayout

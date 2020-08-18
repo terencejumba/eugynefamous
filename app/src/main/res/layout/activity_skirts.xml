@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkirtsActivity"
+    android:background="@color/colorhome"
     android:padding="@dimen/_10sdp"
-    android:background="@color/colormajor">
+    tools:context=".SkirtsActivity">
 
     <RelativeLayout
         android:id="@+id/rl49"
@@ -18,70 +18,92 @@
             android:id="@+id/skirts_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:gravity="center"
-            android:fontFamily="@font/alataregular"
-            android:text="Skirts"
             android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
+            android:gravity="center"
+            android:text="Skirts"
             android:textAlignment="center"
-            android:textStyle="bold"
             android:textColor="@color/colortext"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/skirts_search"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
-            android:src="@drawable/searchicon"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/_5sdp"/>
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/searchicon" />
 
 
     </RelativeLayout>
 
-
-    <TextView
-        android:id="@+id/womensskirts_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" skirts"
-        android:textStyle="bold"
-        android:textColor="@color/colortext"
-        android:fontFamily="@font/alataregular"
-        android:textSize="@dimen/_16sdp"
-        android:layout_below="@id/rl49"
-        android:layout_marginTop="@dimen/_10sdp"/>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/womensskirtslist_"
-        android:layout_marginTop="@dimen/_10sdp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colormajor"
-        android:layout_below="@id/womensskirts_"/>
+        android:layout_below="@+id/rl49"
+        android:layout_marginTop="@dimen/_5sdp">
 
-    <Button
-        android:id="@+id/next_skirts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colortext"
-        android:text="next"
-        android:textSize="@dimen/_14sdp"
-        android:fontFamily="@font/alataregular"
-        android:background="@layout/button_indesign"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@+id/womensskirtslist_"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_skirt"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/womensskirts_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_bar_skirt"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/alataregular"
+                android:text=" skirts"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/womensskirtslist_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/womensskirts_"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+            <Button
+                android:id="@+id/next_skirts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/womensskirtslist_"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@layout/button_indesign"
+                android:fontFamily="@font/alataregular"
+                android:text="next"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

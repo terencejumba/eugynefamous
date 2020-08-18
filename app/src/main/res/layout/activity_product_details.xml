@@ -6,229 +6,221 @@
     android:layout_height="match_parent"
     tools:context=".productsdetails.ProductDetailsActivity">
 
+    <LinearLayout
+        android:id="@+id/product_back_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colormajor">
+
     <ImageView
         android:id="@+id/product_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/back"
+        android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginLeft="@dimen/_5sdp"/>
+        android:src="@drawable/back" />
+
+    </LinearLayout>
 
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_back"
+        android:layout_below="@+id/product_back_"
         android:layout_marginTop="@dimen/_3sdp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/product_image_details"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_260sdp"
-        android:scaleType="centerCrop"/>
+            <ImageView
+                android:id="@+id/product_image_details"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_260sdp"
+                android:scaleType="centerCrop"/>
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/product_design">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@layout/product_design">
+                <TextView
+                    android:id="@+id/product_name_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/alataregular"
+                    android:text="product name"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/product_name_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="product name"
-            android:textColor="@color/colortext"
-            android:textSize="@dimen/_18ssp"
-            android:fontFamily="@font/alataregular"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
+                <RatingBar
+                    android:id="@+id/product_rating_details"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_name_details"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:rating="4" />
 
-        <RatingBar
-            android:id="@+id/product_rating_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_below="@+id/product_name_details"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:rating="4"
-            android:layout_marginTop="@dimen/_10sdp"/>
+                <ImageView
+                    android:id="@+id/delivery_details"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@id/product_name_details"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_toRightOf="@+id/product_rating_details"
+                    android:src="@drawable/deliveryicon" />
 
-        <ImageView
-            android:id="@+id/delivery_details"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/deliveryicon"
-            android:layout_toRightOf="@+id/product_rating_details"
-            android:layout_below="@id/product_name_details"
-            android:layout_marginLeft="@dimen/_40sdp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/spartan"
-            android:text="delivered within 2 hours"
-            android:textSize="@dimen/_12ssp"
-            android:textColor="@color/colortext"
-            android:layout_below="@+id/product_name_details"
-            android:layout_toRightOf="@+id/delivery_details"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_5sdp"/>
-
-
-        <TextView
-            android:id="@+id/product_desc_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="product description"
-            android:textColor="@color/colortext"
-            android:textSize="@dimen/_16ssp"
-            android:fontFamily="@font/spartan"
-            android:layout_below="@+id/product_rating_details"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_name_details"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/delivery_details"
+                    android:fontFamily="@font/spartan"
+                    android:text="delivered within 2 hours"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_12ssp" />
 
 
+                <TextView
+                    android:id="@+id/product_desc_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_rating_details"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/spartan"
+                    android:text="product description"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp" />
 
 
+                <TextView
+                    android:id="@+id/product_price_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_desc_details"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/spartan"
+                    android:text="product price"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/product_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_price_details"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/alataregular"
+                    android:gravity="center"
+                    android:text="please know the sizes and colors which are available in the description before entering them in the text boxes below"
+                    android:textAlignment="center"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
 
 
+                <TextView
+                    android:id="@+id/prdct_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_warn"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/alataregular"
+                    android:gravity="center"
+                    android:text="size"
+                    android:textAlignment="center"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_14ssp" />
 
-        <TextView
-            android:id="@+id/product_price_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="product price"
-            android:textColor="@color/colortext"
-            android:textSize="@dimen/_16ssp"
-            android:textStyle="bold"
-            android:fontFamily="@font/spartan"
-            android:layout_below="@+id/product_desc_details"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
-
-        <TextView
-            android:id="@+id/product_warn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="please know the sizes and colors which are available in the description before entering them in the text boxes below"
-            android:layout_below="@+id/product_price_details"
-            android:fontFamily="@font/alataregular"
-            android:textStyle="bold"
-            android:textColor="@color/colortext"
-            android:textAlignment="center"
-            android:textSize="@dimen/_13sdp"
-            android:gravity="center"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_15sdp"/>
-
-
-        <TextView
-            android:id="@+id/prdct_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="size"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:fontFamily="@font/alataregular"
-            android:textSize="@dimen/_14ssp"
-            android:layout_below="@+id/product_warn"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:textColor="@color/colortext"
-            android:layout_marginTop="@dimen/_10sdp"/>
-
-        <TextView
-            android:id="@+id/prdct_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="color"
-            android:fontFamily="@font/alataregular"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:textSize="@dimen/_14ssp"
-            android:layout_below="@+id/product_warn"
-            android:layout_toRightOf="@id/prdct_size"
-            android:layout_marginLeft="@dimen/_120sdp"
-            android:textColor="@color/colortext"
-            android:layout_marginTop="@dimen/_10sdp"/>
+                <TextView
+                    android:id="@+id/prdct_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_warn"
+                    android:layout_marginLeft="@dimen/_120sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/prdct_size"
+                    android:fontFamily="@font/alataregular"
+                    android:gravity="center"
+                    android:text="color"
+                    android:textAlignment="center"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_14ssp" />
 
 
+                <EditText
+                    android:id="@+id/product_details_size"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/prdct_size"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@layout/edittext_design"
+                    android:fontFamily="@font/spartan"
+                    android:hint="8"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/product_details_color"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/prdct_color"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/product_details_size"
+                    android:background="@layout/edittext_design"
+                    android:fontFamily="@font/spartan"
+                    android:hint="black"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_10sdp" />
 
 
-
-        <EditText
-            android:id="@+id/product_details_size"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/prdct_size"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:textSize="@dimen/_10sdp"
-            android:fontFamily="@font/spartan"
-            android:hint="8"
-            android:textColor="@color/colortext"
-            android:background="@layout/edittext_design"
-            android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
-
-        <EditText
-            android:id="@+id/product_details_color"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_10sdp"
-            android:fontFamily="@font/spartan"
-            android:textColor="@color/colortext"
-            android:padding="@dimen/_10sdp"
-            android:hint="black"
-            android:background="@layout/edittext_design"
-            android:layout_below="@id/prdct_color"
-            android:layout_toRightOf="@id/product_details_size"
-            android:layout_marginLeft="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/number_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/product_details_size"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:elevation="@dimen/_6sdp"
+                    app:finalNumber="30"
+                    app:initialNumber="1"
+                    app:textSize="@dimen/_16sdp" />
 
 
-        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-            android:id="@+id/number_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/_6sdp"
-            app:textSize="@dimen/_16sdp"
-            app:initialNumber="1"
-            app:finalNumber="30"
-            android:layout_below="@id/product_details_size"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_20sdp"/>
+                <Button
+                    android:id="@+id/add_to_cart_pd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/number_btn"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:background="@layout/button_indesign"
+                    android:fontFamily="@font/alataregular"
+                    android:text="add to cart"
+                    android:textColor="@color/colortext"
+                    android:textSize="@dimen/_16ssp" />
 
 
-
-
-
-      <Button
-          android:id="@+id/add_to_cart_pd"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@layout/button_indesign"
-          android:layout_margin="@dimen/_15sdp"
-          android:layout_alignParentBottom="true"
-          android:layout_below="@+id/number_btn"
-          android:text="add to cart"
-          android:textColor="@color/colortext"
-          android:fontFamily="@font/alataregular"
-          android:textSize="@dimen/_16ssp"/>
-
-
-
-
-
-
-    </RelativeLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 

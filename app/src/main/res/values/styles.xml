@@ -12,11 +12,11 @@
 
         <!-- colour of text when item is selected-->
 
-        <item name="colorPrimary"> @color/colorPrimary </item>
+        <item name="colorPrimary"> @color/colorpprimary </item>
 
         <!-- background colour of text when item is selected-->
 
-        <item name="colorControlHighlight"> @color/colorminorbin </item>
+        <item name="colorControlHighlight"> @color/colorPrimaryDark </item>
 
 
     </style>

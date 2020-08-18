@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
     private EditText fullNameEditText, userNameEditText, userPhoneEditText, addressEditText;
     private TextView profileChangeTextBtn, saveTextButton;
     private ImageView backBtn;
+    private Button securityQuestionBtn;
 
     //for images
     private Uri imageUri;
@@ -54,6 +57,10 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        //removing the top status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //hides the action bar
+        getSupportActionBar().hide();
 
         //hooks
         profileImageView = findViewById(R.id.profile_image);
@@ -64,6 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
         profileChangeTextBtn = findViewById(R.id.profile_image_change);
         saveTextButton = findViewById(R.id.update_account_settings);
         backBtn = findViewById(R.id.close_settings);
+        securityQuestionBtn = findViewById(R.id.settings_security_questions_btn);
 
         //setting visibility
         profileChangeTextBtn.setVisibility(View.GONE);
@@ -116,6 +124,17 @@ public class SettingsActivity extends AppCompatActivity {
                 CropImage.activity(imageUri)
                         .setAspectRatio(1, 1)
                         .start(SettingsActivity.this);
+
+
+            }
+        });
+
+        securityQuestionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(SettingsActivity.this, ResetPasswordActivity.class).putExtra("check", "settings"));
+
 
 
             }
@@ -327,17 +346,17 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if (snapshot.child("image").exists()) {
+                if (snapshot.child("address").exists()) {
 
                     //getting the user inputs
-                    String image = snapshot.child("image").getValue().toString();
+                   // String image = snapshot.child("image").getValue().toString();
                     String name = snapshot.child("name").getValue().toString();
                     String username = snapshot.child("username").getValue().toString();
                     String phone = snapshot.child("phone").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
 
                     //displaying the image
-                    Picasso.get().load(image).into(profileImageView);
+                   // Picasso.get().load(image).into(profileImageView);
 
                     fullNameEditText.setText(name);
                     userNameEditText.setText(username);

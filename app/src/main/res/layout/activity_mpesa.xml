@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mpesaActivity"
+    android:background="@color/colorhome">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mpesa"
+        android:textSize="@dimen/_40sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/aclonica"/>
+
+
+
+    <EditText
+        android:id="@+id/mpesa_phone"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
+        android:hint="enter phone"
+        android:textColor="@color/colortext"
+        android:background="@layout/edittext_design"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <EditText
+        android:id="@+id/mpesa_amount"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mpesa_phone"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
+        android:layout_centerHorizontal="true"
+        android:hint="ksh 800"
+        android:textColor="@color/colortext"
+        android:background="@layout/edittext_design"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+
+    <Button
+        android:id="@+id/mpesa_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="pay"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/mpesa_amount"/>
+
+    <Button
+        android:id="@+id/mpesa_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="done"
+        android:background="@layout/button_indesign"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/mpesa_pay"/>
+
+
+
+</RelativeLayout>

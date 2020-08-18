@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import quinton.terence.eugynefamous.R;
-import quinton.terence.eugynefamous.itemClickListener;
+import quinton.terence.eugynefamous.Interface.itemClickListener;
 
 public class cartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -36,7 +36,7 @@ public class cartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     }
 
 
-    public void setItemClickListener(quinton.terence.eugynefamous.itemClickListener itemClickListener) {
+    public void setItemClickListener(quinton.terence.eugynefamous.Interface.itemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 }

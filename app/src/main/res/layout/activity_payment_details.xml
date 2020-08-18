@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PaymentDetailsActivity"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_5sdp">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="choose your prefered payment option "
         android:textColor="@color/colortext"
-        android:fontFamily="@font/alataregular"
+        android:fontFamily="@font/aclonica"
         android:textSize="@dimen/_18ssp"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_20sdp"/>
@@ -40,10 +40,10 @@
         android:textColor="@color/colortext"
         android:textSize="@dimen/_15sdp"
         android:fontFamily="@font/alataregular"
-        android:layout_toRightOf="@id/paypal"
+        android:layout_toRightOf="@id/cash_on_delivery"
         android:layout_below="@id/pay_detail_title"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_180sdp"/>
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_100sdp"/>
 
 
     <TextView
@@ -84,6 +84,18 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_20sdp"/>
 
+    <TextView
+        android:id="@+id/cash_on_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cash on delivery"
+        android:layout_below="@+id/usd"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colortext"
+        android:fontFamily="@font/alataregular"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_20sdp"/>
+
 
     <Button
         android:id="@+id/confirm_pay_btn"
@@ -93,9 +105,9 @@
         android:textColor="@color/colortext"
         android:textStyle="bold"
         android:textSize="@dimen/_11sdp"
-        android:layout_below="@+id/usd"
+        android:layout_below="@+id/cash_on_delivery"
         android:background="@layout/button_indesign"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_60sdp"
         android:layout_marginLeft="@dimen/_20sdp"/>
 
 

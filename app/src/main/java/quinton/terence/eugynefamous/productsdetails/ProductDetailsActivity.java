@@ -111,7 +111,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         //retrieving the specific product details using the productID
 
-        getProductDetails(prodID);
+        getProductDetails();
 
 
 
@@ -218,13 +218,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void getProductDetails(String productID) {
+    private void getProductDetails() {
 
         //creating database refernce for the product node
         DatabaseReference shatiRefer = FirebaseDatabase.getInstance().getReference().child(category).child(sex);
 
         //now we are searching for the specific child in our node
-        shatiRefer.child(productID).addValueEventListener(new ValueEventListener() {
+        shatiRefer.child(prodID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

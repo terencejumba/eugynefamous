@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import quinton.terence.eugynefamous.R;
-import quinton.terence.eugynefamous.itemClickListener;
+import quinton.terence.eugynefamous.Interface.itemClickListener;
 
 public class StartProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

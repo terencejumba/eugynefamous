@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menSweaterActivity"
-    android:background="@color/colormajor"
-    android:padding="@dimen/_5sdp">
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    tools:context=".menSweaterActivity">
 
     <RelativeLayout
         android:id="@+id/rl29"
@@ -19,16 +19,16 @@
             android:id="@+id/mensweaterback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
 
         <TextView
             android:id="@+id/mensweater_title"
             android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/alataregular"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/alataregular"
             android:gravity="center"
             android:text="Sweaters"
             android:textAlignment="center"
@@ -39,50 +39,69 @@
             android:id="@+id/mensweaters_search"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
-            android:src="@drawable/searchicon"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/_5sdp"/>
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/searchicon" />
 
 
     </RelativeLayout>
 
-
-    <TextView
-        android:id="@+id/mensweater_s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" sweaters, hoods and jackets"
-        android:textStyle="bold"
-        android:textSize="@dimen/_14ssp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@id/rl29"
-        android:layout_marginTop="@dimen/_20sdp"/>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/menssweaterlist_"
-        android:layout_marginTop="20dp"
-        android:background="@color/colormajor"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mensweater_s"/>
+        android:layout_below="@+id/rl29">
 
-    <Button
-        android:id="@+id/next_mensweater"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colortext"
-        android:text="next"
-        android:textSize="@dimen/_14sdp"
-        android:fontFamily="@font/alataregular"
-        android:background="@layout/button_indesign"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@+id/menssweaterlist_"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ProgressBar
+                android:id="@+id/progress_bar_menSweater"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/mensweater_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_bar_menSweater"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text=" sweaters, hoods and jackets"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menssweaterlist_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mensweater_s"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/next_mensweater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menssweaterlist_"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@layout/button_indesign"
+                android:fontFamily="@font/alataregular"
+                android:text="next"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

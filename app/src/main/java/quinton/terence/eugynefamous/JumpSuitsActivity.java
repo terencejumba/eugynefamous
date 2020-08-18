@@ -6,12 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -19,6 +23,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.lang.ref.WeakReference;
+
+import quinton.terence.eugynefamous.Admin.AdminMaintainProductsActivity;
 import quinton.terence.eugynefamous.Model.products;
 import quinton.terence.eugynefamous.ViewHolder.ProductViewHolder;
 import quinton.terence.eugynefamous.productsdetails.ProductDetailsActivity;
@@ -28,22 +35,46 @@ public class JumpSuitsActivity extends AppCompatActivity {
     private RecyclerView jumpSuitsList;
 
     private ImageView backBtn, searchBtn;
+    private ProgressBar progressBar;
 
     private Button nextBtn;
+
+    //getting intent
+    private String type = "";
+
+    //firebase variables
+    private DatabaseReference jumpsRef;
+    private FirebaseRecyclerAdapter<products, ProductViewHolder> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jump_suits);
+        //removing the top status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //hides the action bar
+        getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if(bundle != null){
+
+            type = getIntent().getExtras().get("jumpSuitsHome").toString();
+
+        }
 
 
         jumpSuitsList = findViewById(R.id.jumpsuitslist_);
         jumpSuitsList.setLayoutManager(new LinearLayoutManager(this));
 
+
         backBtn = findViewById(R.id.jump_back);
 
         searchBtn = findViewById(R.id.jumpsuit_search);
         nextBtn = findViewById(R.id.next_jumps);
+        progressBar = findViewById(R.id.progress_bar_jumpsuits);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +85,7 @@ public class JumpSuitsActivity extends AppCompatActivity {
 
                 intent.putExtra("sex", "women");
                 intent.putExtra("category", "jumpsuits");
+                intent.putExtra("nextType", type);
 
                 startActivity(intent);
 
@@ -73,12 +105,18 @@ public class JumpSuitsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(JumpSuitsActivity.this, SearchProductsActivity.class);
+                if (!type.equals("Admin")) {
 
-                intent.putExtra("sex", "women");
-                intent.putExtra("category", "jumpsuits");
+                    Intent intent = new Intent(JumpSuitsActivity.this, SearchProductsActivity.class);
 
-                startActivity(intent);
+                    intent.putExtra("sex", "women");
+                    intent.putExtra("category", "jumpsuits");
+
+                    startActivity(intent);
+
+
+                }
+
 
 
 
@@ -96,65 +134,187 @@ public class JumpSuitsActivity extends AppCompatActivity {
         super.onStart();
 
 
-        DatabaseReference jumpsRef = FirebaseDatabase.getInstance().getReference().child("jumpsuits").child("women");
-
-        FirebaseRecyclerOptions<products> options = new
-                FirebaseRecyclerOptions.Builder<products>()
-                .setQuery(jumpsRef.orderByChild("priority").startAt("1").endAt("1"), products.class)  //the category shows what you want to show in the recycler view here we are searching using the pname
-                .build();
+        JumpSuitsAsyncTask task = new JumpSuitsAsyncTask(this);
+        task.execute(3);
 
 
-        FirebaseRecyclerAdapter<products, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<products, ProductViewHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final products model) {
 
-                        holder.txtProductName.setText(model.getPname());
-                        holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText(model.getPrice() + "Ksh");
+    }
 
-                        Picasso.get().load(model.getImage()).into(holder.imageView);
+    private class JumpSuitsAsyncTask extends AsyncTask<Integer, Integer, String>{
 
+        private WeakReference<JumpSuitsActivity> activityWeakReference;
 
-                        //setting a click listener to the relative layout
+        public JumpSuitsAsyncTask(JumpSuitsActivity activity) {
 
-                        holder.itemView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+            activityWeakReference = new WeakReference<JumpSuitsActivity>(activity);
 
-                                Intent intent = new Intent(JumpSuitsActivity.this, ProductDetailsActivity.class);
+        }
 
-                                intent.putExtra("pid", model.getPid());
-                                intent.putExtra("category", model.getCategory());
-                                intent.putExtra("sex", model.getSex());
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
 
-                                startActivity(intent);
+           JumpSuitsActivity activity =  activityWeakReference.get();
 
+            if (activity == null || activity.isFinishing()) {
 
-                            }
-                        });
+                return;
 
+            }
 
-                    }
+            jumpSuitsList.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
 
-                    @NonNull
-                    @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            Toast.makeText(activity, "loading...", Toast.LENGTH_SHORT).show();
 
 
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_layout, parent, false);
-
-                        ProductViewHolder holder = new ProductViewHolder(view);
-
-                        return holder;
+        }
 
 
-                    }
-                };
+        @Override
+        protected String doInBackground(Integer... integers) {
 
-        jumpSuitsList.setAdapter(adapter);
-        adapter.startListening();
+            for (int i = 0; i < integers[0]; i++) {
 
+                publishProgress( (i * 100) / integers[0] );
+
+                if (i == 1){
+
+                    jumpsRef = FirebaseDatabase.getInstance().getReference().child("jumpsuits").child("women");
+
+                    FirebaseRecyclerOptions<products> options = new
+                            FirebaseRecyclerOptions.Builder<products>()
+                            .setQuery(jumpsRef.orderByChild("priority").startAt("1").endAt("1"), products.class)  //the category shows what you want to show in the recycler view here we are searching using the pname
+                            .build();
+
+
+                    adapter =
+                            new FirebaseRecyclerAdapter<products, ProductViewHolder>(options) {
+                                @Override
+                                protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final products model) {
+
+                                    holder.txtProductName.setText(model.getPname());
+                                    holder.txtProductDescription.setText(model.getDescription());
+                                    holder.txtProductPrice.setText(model.getPrice() + "Ksh");
+
+                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+
+
+                                    //setting a click listener to the relative layout
+
+                                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            if (type.equals("Admin")){
+
+
+                                                Intent intent = new Intent(JumpSuitsActivity.this, AdminMaintainProductsActivity.class);
+
+                                                intent.putExtra("pid", model.getPid());
+                                                intent.putExtra("category", model.getCategory());
+                                                intent.putExtra("sex", model.getSex());
+
+                                                startActivity(intent);
+
+
+                                            }
+                                            else {
+
+                                                Intent intent = new Intent(JumpSuitsActivity.this, ProductDetailsActivity.class);
+
+                                                intent.putExtra("pid", model.getPid());
+                                                intent.putExtra("category", model.getCategory());
+                                                intent.putExtra("sex", model.getSex());
+
+                                                startActivity(intent);
+
+                                            }
+
+
+
+
+                                        }
+                                    });
+
+
+                                }
+
+                                @NonNull
+                                @Override
+                                public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+
+                                    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.products_layout, parent, false);
+
+                                    ProductViewHolder holder = new ProductViewHolder(view);
+
+                                    return holder;
+
+
+                                }
+                            };
+
+
+
+
+                }
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            return "updated";
+
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+
+            JumpSuitsActivity activity =  activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing()) {
+
+                return;
+
+            }
+
+            progressBar.setProgress(values[0]);
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            JumpSuitsActivity activity =  activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing()) {
+
+                return;
+
+            }
+
+            jumpSuitsList.setAdapter(adapter);
+            adapter.startListening();
+
+            jumpSuitsList.setVisibility(View.VISIBLE);
+
+            progressBar.setProgress(0);
+            progressBar.setVisibility(View.GONE);
+
+            Toast.makeText(activity, s, Toast.LENGTH_SHORT).show();
+
+
+        }
 
     }
 

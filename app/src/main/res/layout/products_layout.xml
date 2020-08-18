@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="@dimen/_300sdp"
+    android:layout_height="@dimen/_210sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="20dp"
-    android:layout_marginStart="15dp"
-    android:layout_marginEnd="15dp"
-    app:cardElevation="15dp">
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    app:cardElevation="@dimen/_15ssp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_10sdp"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:padding="@dimen/_5sdp"
         android:background="#fff">
 
 
         <ImageView
             android:id="@+id/home_img"
             android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_140sdp"
+            android:layout_height="@dimen/_160sdp"
             android:src="@drawable/socks"
             android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/_10sdp"
@@ -35,7 +35,7 @@
             android:fontFamily="@font/alataregular"
             android:padding="@dimen/_5sdp"
             android:gravity="center"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:textSize="@dimen/_20sdp" />
 
         <RatingBar
@@ -46,7 +46,7 @@
             android:padding="@dimen/_5sdp"
             android:layout_below="@+id/home_title"
             android:layout_toRightOf="@id/home_img"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:rating="4"
             android:layout_marginTop="@dimen/_10sdp"/>
 
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:text="here is what we sell"
             android:layout_below="@id/home_rating"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:layout_toRightOf="@+id/home_img"
             android:padding="@dimen/_5sdp"
             android:textColor="@color/colortext"
@@ -75,7 +75,7 @@
             android:textSize="@dimen/_12ssp"
             android:fontFamily="@font/alataregular"
             android:layout_below="@id/home_description"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:layout_toRightOf="@+id/home_img"
 
             android:padding="@dimen/_5sdp"

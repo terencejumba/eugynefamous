@@ -4,115 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".common.LogInActivity"
-    android:background="@color/colormajor"
-    android:padding="@dimen/_5sdp">
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    tools:context=".common.LogInActivity">
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-      android:text="log in"
-      android:fontFamily="@font/aclonica"
-      android:textSize="@dimen/_40sdp"
-      android:layout_centerHorizontal="true"
-      android:layout_above="@+id/login_phone"
-      android:layout_marginBottom="@dimen/_40sdp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:fontFamily="@font/aclonica"
+        android:text="log in"
+        android:textSize="@dimen/_40sdp" />
 
-   <EditText
-       android:id="@+id/login_phone"
-       android:layout_width="@dimen/_200sdp"
-       android:layout_height="@dimen/_50sdp"
-       android:background="@layout/edittext_design"
-       android:layout_centerHorizontal="true"
-      android:layout_above="@+id/login_password"
-       android:layout_marginBottom="@dimen/_20sdp"
-       android:inputType="number"
-       android:hint="enter phone"
-       android:textColor="@color/colortext"
-       android:textColorHint="@color/colortext"
-       android:textSize="@dimen/_16ssp"
-       android:fontFamily="@font/spartan"
-       android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/login_phone"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@layout/edittext_design"
+        android:fontFamily="@font/spartan"
+        android:hint="enter phone"
+        android:inputType="number"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
 
-   <EditText
-       android:id="@+id/login_password"
-       android:layout_width="@dimen/_200sdp"
-       android:inputType="numberPassword"
-       android:layout_height="@dimen/_50sdp"
-      android:background="@layout/edittext_design"
-      android:layout_centerHorizontal="true"
-      android:layout_centerVertical="true"
-       android:fontFamily="@font/spartan"
-      android:hint="enter password"
-       android:textColor="@color/colortext"
-       android:textColorHint="@color/colortext"
-       android:textSize="@dimen/_18ssp"
-       android:textStyle="bold"/>
+        android:textSize="@dimen/_10sdp"
 
-   <CheckBox
-       android:id="@+id/remember_me_check"
-       android:layout_width="wrap_content"
-       android:layout_height="@dimen/_20sdp"
-       android:layout_below="@+id/login_password"
-       android:layout_marginTop="@dimen/_30sdp"
-       android:layout_marginLeft="@dimen/_10sdp"
-       android:text="remember me"
-       android:textSize="@dimen/_16ssp"/>
+        android:textStyle="bold" />
 
-   <TextView
-       android:id="@+id/forget_password"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="forget password"
-       android:layout_below="@+id/login_password"
-       android:layout_toRightOf="@+id/remember_me_check"
-       android:layout_marginLeft="@dimen/_70sdp"
-       android:fontFamily="@font/alataregular"
-       android:textColor="@color/colortext"
-       android:textSize="@dimen/_12ssp"
-       android:layout_marginTop="@dimen/_30sdp"/>
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colortext"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
+        android:background="@layout/edittext_design"
+        android:hint="enter password"
+        android:inputType="numberPassword"
+        android:textColorHint="@color/colortext"
+        android:textStyle="bold" />
 
-   <TextView
-       android:id="@+id/iamAdmin"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="am admin"
-       android:layout_below="@+id/remember_me_check"
-       android:fontFamily="@font/alataregular"
-       android:layout_marginTop="@dimen/_10sdp"
-       android:textSize="@dimen/_12sdp"
-       android:layout_alignParentRight="true"
-       android:layout_marginRight="@dimen/_20sdp"
-       android:textColor="@color/colortext"/>
+    <CheckBox
+        android:id="@+id/remember_me_check"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_below="@+id/login_password"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="remember me"
+        android:textSize="@dimen/_16ssp" />
 
-   <TextView
-       android:id="@+id/iamnotAdmin"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="am not admin"
-       android:layout_below="@+id/remember_me_check"
-       android:fontFamily="@font/alataregular"
-       android:textSize="@dimen/_12sdp"
-       android:layout_marginTop="@dimen/_10sdp"
-       android:textColor="@color/colortext"
-       android:layout_marginLeft="@dimen/_20sdp"/>
+    <TextView
+        android:id="@+id/forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_toRightOf="@+id/remember_me_check"
+        android:fontFamily="@font/alataregular"
+        android:text="forget password"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_12ssp" />
 
-   <Button
-       android:id="@+id/log_in"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-      android:text="log in"
-       android:textStyle="bold"
-       android:textColor="@color/colortext"
-       android:fontFamily="@font/alataregular"
-      android:layout_below="@+id/iamnotAdmin"
-       android:layout_centerHorizontal="true"
-       android:layout_marginTop="@dimen/_10sdp"
-       android:background="@layout/button_indesign"/>
+    <TextView
+        android:id="@+id/iamAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remember_me_check"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_40sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="am admin"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_12sdp" />
 
+    <TextView
+        android:id="@+id/iamnotAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remember_me_check"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/alataregular"
+        android:text="am not admin"
+        android:textColor="@color/colortext"
+        android:textSize="@dimen/_12sdp" />
 
-
-
+    <Button
+        android:id="@+id/log_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iamnotAdmin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@layout/button_indesign"
+        android:fontFamily="@font/alataregular"
+        android:text="log in"
+        android:textColor="@color/colortext"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

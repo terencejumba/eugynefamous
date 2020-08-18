@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,17 +22,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import io.paperdb.Paper;
-import quinton.terence.eugynefamous.AdminAddNewProductActivity;
-import quinton.terence.eugynefamous.AdminCategoryActivity;
+import quinton.terence.eugynefamous.Admin.AdminCategoryActivity;
 import quinton.terence.eugynefamous.HomeActivity;
 import quinton.terence.eugynefamous.Model.users;
 import quinton.terence.eugynefamous.R;
+import quinton.terence.eugynefamous.ResetPasswordActivity;
+import quinton.terence.eugynefamous.SettingsActivity;
 import quinton.terence.eugynefamous.prevalent.prevalent;
 
 public class LogInActivity extends AppCompatActivity {
 
     private EditText phone, password;
-    private TextView iamAdmin, iamNotAdmin;
+    private TextView iamAdmin, iamNotAdmin, forgetPasswordLink;
 
     private Button  loginBtn;
 
@@ -45,12 +47,17 @@ public class LogInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        //removing the top status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //hides the action bar
+        getSupportActionBar().hide();
 
         phone = findViewById(R.id.login_phone);
         password = findViewById(R.id.login_password);
 
         iamAdmin = findViewById(R.id.iamAdmin);
         iamNotAdmin = findViewById(R.id.iamnotAdmin);
+        forgetPasswordLink = findViewById(R.id.forget_password);
 
         loginBtn = findViewById(R.id.log_in);
 
@@ -94,6 +101,16 @@ public class LogInActivity extends AppCompatActivity {
                 iamAdmin.setVisibility(View.VISIBLE);
                 iamNotAdmin.setVisibility(View.INVISIBLE);
                 ParentdatabName = "Users";
+
+
+            }
+        });
+
+        forgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(LogInActivity.this, ResetPasswordActivity.class).putExtra("check", "login"));
 
 
             }
@@ -172,6 +189,8 @@ public class LogInActivity extends AppCompatActivity {
 
                                startActivity(intent);
 
+                               finish();
+
 
                            }
                            else if (ParentdatabName.equals("Users")){
@@ -185,6 +204,8 @@ public class LogInActivity extends AppCompatActivity {
                                prevalent.currentOnlineUser = usersData;
 
                                startActivity(intent);
+
+                               finish();
 
                            }
 

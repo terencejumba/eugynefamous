@@ -2,20 +2,20 @@ package quinton.terence.eugynefamous.Model;
 
 public class AdminOrders {
 
-    private String name, phone, state, home, address, totalAmount, payState, payid, date, time;
+    private String name, phone, state, home, address, totalAmount, method, mpesaPhone, date, time;
 
     public AdminOrders() {
     }
 
-    public AdminOrders(String name, String phone, String state, String home, String address, String totalAmount, String payState, String payid, String date, String time) {
+    public AdminOrders(String name, String phone, String state, String home, String address, String totalAmount, String method, String mpesaPhone, String date, String time) {
         this.name = name;
         this.phone = phone;
         this.state = state;
         this.home = home;
         this.address = address;
+        this.mpesaPhone = mpesaPhone;
         this.totalAmount = totalAmount;
-        this.payState = payState;
-        this.payid = payid;
+        this.method = method;
         this.date = date;
         this.time = time;
     }
@@ -68,20 +68,20 @@ public class AdminOrders {
         this.totalAmount = totalAmount;
     }
 
-    public String getPayState() {
-        return payState;
+    public String getMethod() {
+        return method;
     }
 
-    public void setPayState(String payState) {
-        this.payState = payState;
+    public void setMethod(String method) {
+        this.method = method;
     }
 
-    public String getPayid() {
-        return payid;
+    public String getMpesaPhone() {
+        return mpesaPhone;
     }
 
-    public void setPayid(String payid) {
-        this.payid = payid;
+    public void setMpesaPhone(String mpesaPhone) {
+        this.mpesaPhone = mpesaPhone;
     }
 
     public String getDate() {

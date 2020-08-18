@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_10sdp"
     tools:context=".WomenTrouserActivity">
 
@@ -49,17 +49,36 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl39"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_womentrouser"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
 
     <TextView
         android:id="@+id/womentrouser_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl39"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/progress_bar_womentrouser"
+        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/alataregular"
         android:textColor="@color/colortext"
         android:textSize="@dimen/_14sdp"
-        android:text="men trouser"/>
+        android:text="women trouser"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -67,7 +86,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/womentrouser_"
-        android:background="@color/colormajor"
         android:layout_marginTop="@dimen/_10sdp" />
 
     <Button
@@ -83,6 +101,11 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_below="@+id/womentrouserlist_"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

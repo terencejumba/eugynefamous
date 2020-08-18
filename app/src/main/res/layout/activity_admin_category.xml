@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminCategoryActivity"
-    android:background="@color/colormajor">
+    android:background="@color/colorhome"
+    tools:context=".Admin.AdminCategoryActivity">
 
     <TextView
         android:id="@+id/sloga_category"
@@ -14,13 +14,13 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_27sdp"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/_5sdp"
-
         android:fontFamily="@font/alataregular"
-        android:textColor="@color/colortext"
+        android:gravity="center_horizontal"
+
+        android:padding="@dimen/_5sdp"
         android:text="Add new product"
         android:textAlignment="center"
+        android:textColor="@color/colortext"
         android:textSize="@dimen/_26ssp"
         android:textStyle="bold" />
 
@@ -63,8 +63,8 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="t-shirts"
+                        android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
@@ -86,8 +86,8 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="shirts"
+                        android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
@@ -109,8 +109,8 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="dressees"
+                        android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
@@ -132,8 +132,8 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="hats"
+                        android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
@@ -167,8 +167,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="trousers"
                         android:fontFamily="@font/spartan"
+                        android:text="trousers"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -190,8 +190,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="shorts"
                         android:fontFamily="@font/spartan"
+                        android:text="shorts"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -213,8 +213,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="socks"
                         android:fontFamily="@font/spartan"
+                        android:text="socks"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -238,8 +238,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="bags"
                         android:fontFamily="@font/spartan"
+                        android:text="bags"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -247,7 +247,6 @@
 
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -276,8 +275,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="belts"
                         android:fontFamily="@font/spartan"
+                        android:text="belts"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -300,8 +299,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="shoes"
                         android:fontFamily="@font/spartan"
+                        android:text="shoes"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -324,14 +323,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="sweaters"
                         android:fontFamily="@font/spartan"
+                        android:text="sweaters"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
@@ -362,8 +359,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="skirts"
                         android:fontFamily="@font/spartan"
+                        android:text="skirts"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -387,8 +384,8 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="lingerie"
+                        android:textColor="@color/colortext"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -411,13 +408,11 @@
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/spartan"
-                        android:textColor="@color/colortext"
                         android:text="jumpsuits"
+                        android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
@@ -448,8 +443,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="blouse"
                         android:fontFamily="@font/spartan"
+                        android:text="blouse"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -472,8 +467,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="tunics"
                         android:fontFamily="@font/spartan"
+                        android:text="tunics"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -496,14 +491,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="tanks"
                         android:fontFamily="@font/spartan"
+                        android:text="tanks"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
@@ -534,8 +527,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_15sdp"
-                        android:text="sandals"
                         android:fontFamily="@font/spartan"
+                        android:text="sandals"
                         android:textColor="@color/colortext"
                         android:textSize="@dimen/_18ssp" />
 
@@ -545,32 +538,43 @@
             </LinearLayout>
 
 
+            <Button
+                android:id="@+id/maintain_products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@color/colorPrimary"
+                android:text="maintain products"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_20sdp" />
 
 
             <Button
                 android:id="@+id/check_orders_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_40sdp"
                 android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:background="@color/colorPrimary"
                 android:text="check orders"
-                android:textSize="@dimen/_20sdp"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:textSize="@dimen/_20sdp" />
 
             <Button
-                android:layout_below="@+id/check_orders_btn"
                 android:id="@+id/admin_logout_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/check_orders_btn"
                 android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:background="@color/colorPrimary"
                 android:text="log out"
-                android:textSize="@dimen/_20sdp"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:textSize="@dimen/_20sdp" />
 
 
         </LinearLayout>

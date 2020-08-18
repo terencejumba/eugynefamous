@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlouseActivity"
-    android:background="@color/colormajor"
-    android:padding="@dimen/_5sdp">
+    android:background="@color/colorhome"
+    android:padding="@dimen/_5sdp"
+    tools:context=".BlouseActivity">
 
     <RelativeLayout
         android:id="@+id/r23"
@@ -18,17 +18,17 @@
             android:id="@+id/blouse_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
 
 
         <TextView
             android:id="@+id/dresses_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/alataregular"
-            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="Blouses"
             android:textAlignment="center"
@@ -39,53 +39,72 @@
             android:id="@+id/blouse_search"
             android:layout_width="@dimen/_32sdp"
             android:layout_height="@dimen/_32sdp"
-            android:src="@drawable/searchicon"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/_10sdp"/>
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/searchicon" />
 
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/_blouses_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@id/r23"
-
-        android:text="blouses"
-        android:fontFamily="@font/alataregular"
-
-        android:textColor="@color/colortext"
-        android:textSize="@dimen/_17sdp" />
-
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/blouseslist"
-        android:layout_marginTop="@dimen/_10sdp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:background="@color/colormajor"
         android:layout_height="wrap_content"
-        android:layout_below="@id/_blouses_title"/>
+        android:layout_below="@id/r23">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_blouse"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/_blouses_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progress_bar_blouse"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                android:fontFamily="@font/alataregular"
+                android:text="blouses"
+
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_17sdp" />
 
 
-    <Button
-        android:id="@+id/next_blouse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colortext"
-        android:textSize="@dimen/_14sdp"
-        android:fontFamily="@font/alataregular"
-        android:text="next"
-        android:background="@layout/button_indesign"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@+id/blouseslist"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/blouseslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/_blouses_title"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+
+            <Button
+                android:id="@+id/next_blouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/blouseslist"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@layout/button_indesign"
+                android:fontFamily="@font/alataregular"
+                android:text="next"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

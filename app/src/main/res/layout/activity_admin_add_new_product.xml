@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminAddNewProductActivity"
-    android:background="@color/colormajor">
+    tools:context=".Admin.AdminAddNewProductActivity"
+    android:background="@color/colorhome">
 
 
 
@@ -37,7 +37,11 @@
 
         android:inputType="textMultiLine"
         android:layout_marginTop="@dimen/_20sdp"
-        android:padding="@dimen/_20sdp"
+
+        android:textColor="@color/colortext"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
         android:background="@layout/edittext_design"
         android:hint="product name"
         android:layout_marginLeft="@dimen/_50sdp"
@@ -50,7 +54,11 @@
         android:layout_below="@+id/product_name"
         android:inputType="textMultiLine"
         android:layout_marginTop="@dimen/_20sdp"
-        android:padding="@dimen/_20sdp"
+
+        android:textColor="@color/colortext"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
         android:background="@layout/edittext_design"
         android:hint="product description"
         android:layout_marginLeft="@dimen/_50sdp"
@@ -63,7 +71,11 @@
         android:layout_below="@+id/product_description"
         android:inputType="number"
         android:layout_marginTop="@dimen/_20sdp"
-        android:padding="@dimen/_20sdp"
+
+        android:textColor="@color/colortext"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
         android:hint="product price"
         android:background="@layout/edittext_design"
         android:layout_marginLeft="@dimen/_50sdp"
@@ -75,8 +87,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_price"
         android:inputType="number"
+        android:textColor="@color/colortext"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/spartan"
         android:layout_marginTop="@dimen/_20sdp"
-        android:padding="@dimen/_20sdp"
         android:hint="product priority"
         android:background="@layout/edittext_design"
         android:layout_marginLeft="@dimen/_50sdp"

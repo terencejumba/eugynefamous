@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BagsActivity"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_5sdp">
 
     <RelativeLayout
@@ -39,13 +39,32 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/r22"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_bags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_margin="@dimen/_16sdp"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
     <TextView
         android:id="@+id/handbags_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/r22"
+        android:layout_below="@+id/progress_bar_bags"
 
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:textStyle="bold"
 
         android:text="Hand bags"
@@ -58,9 +77,9 @@
         android:id="@+id/handbags_more_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/r22"
-        android:layout_marginLeft="@dimen/_120sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/progress_bar_bags"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_5sdp"
 
         android:layout_toRightOf="@+id/handbags_title"
 
@@ -73,8 +92,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bagslist"
         android:layout_marginTop="@dimen/_5sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_290sdp"
         android:layout_below="@id/handbags_title" />
 
 
@@ -100,7 +119,7 @@
         android:layout_below="@+id/bagslist"
         android:fontFamily="@font/alataregular"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_170sdp"
+        android:layout_marginLeft="@dimen/_150sdp"
         android:layout_toRightOf="@+id/_bags_title"
         android:text="show more"
         android:textColor="@color/colortext"
@@ -110,9 +129,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/_bagslist"
         android:layout_marginTop="@dimen/_5sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_290sdp"
         android:layout_below="@id/_bags_title" />
 
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
