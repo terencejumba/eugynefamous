@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".common.RegisterActivity"
-    android:background="@color/colorhome">
+    android:background="@drawable/colorpprimary">
 
     <TextView
         android:id="@+id/reg_text"

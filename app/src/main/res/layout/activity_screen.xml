@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/splash_image"
         android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         android:fontFamily="@font/aclonica"
-        android:text="eugyne famous"
+        android:text="Eugyne Famous"
         android:textColor="@color/colortext" />
 
 

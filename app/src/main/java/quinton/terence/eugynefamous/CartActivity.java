@@ -57,7 +57,6 @@ public class CartActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         recyclerView = findViewById(R.id.cart_list);
-        recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -72,7 +71,7 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                totalAmount.setText( "Total Price : "  + String.valueOf(overTotalPrice));
+
 
 
                 Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
@@ -80,6 +79,9 @@ public class CartActivity extends AppCompatActivity {
                 //String.valueOf(overTotalPrice) converts it to string data type
 
                 intent.putExtra("Total Price", String.valueOf(overTotalPrice));
+
+                totalAmount.setText( "Total Price : "  + String.valueOf(overTotalPrice));
+
 
                 startActivity(intent);
 
@@ -106,6 +108,10 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        totalAmount.setVisibility(View.VISIBLE);
+
+
 
 
         checkOrderState();
@@ -151,7 +157,7 @@ public class CartActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         //creating a dialog box
-                        CharSequence options[] = new CharSequence[]
+                        CharSequence[] options = new CharSequence[]
                                 {
 
                                         "Edit",
@@ -192,6 +198,12 @@ public class CartActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
 
                                                     if (task.isSuccessful()) {
+
+                                                        cartlistrefer.child("Admin View")
+                                                                .child(prevalent.currentOnlineUser.getPhone())
+                                                                .child("Products")
+                                                                .child(model.getPid())
+                                                                .removeValue();
 
                                                         Toast.makeText(CartActivity.this, "item removed", Toast.LENGTH_SHORT).show();
 
@@ -237,6 +249,7 @@ public class CartActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+        recyclerView.setVisibility(View.VISIBLE);
 
 
     }

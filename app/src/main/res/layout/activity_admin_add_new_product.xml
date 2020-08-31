@@ -144,7 +144,6 @@
                 android:fontFamily="@font/alataregular"
                 android:text="womens"
                 android:textStyle="bold"
-                android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_marginRight="@dimen/_50sdp"/>
 
 
