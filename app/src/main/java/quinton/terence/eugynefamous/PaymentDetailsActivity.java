@@ -1,9 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +8,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,7 +50,7 @@ public class PaymentDetailsActivity extends AppCompatActivity {
 
     //changes depending on which currency was clicked
     private String currency = "Ksh choosed";
-    private String method = "mpesa";
+    private String method = "cashOnDelivery";
 
     //getting the intents from the confirm final order activity
     private String TotalAmount = "";
@@ -253,10 +253,11 @@ public class PaymentDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                method = "mpesa";
 
-                mPesa.setVisibility(View.INVISIBLE);
-                confirmBtn.setText("Confirm(Mpesa)");
+
+                mPesa.setVisibility(View.VISIBLE);
+
+                Toast.makeText(PaymentDetailsActivity.this, "will be available soon", Toast.LENGTH_SHORT).show();
 
                 cashOnDelivery.setVisibility(View.VISIBLE);
 

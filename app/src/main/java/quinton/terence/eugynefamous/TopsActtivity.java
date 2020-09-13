@@ -1,10 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +11,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -135,7 +135,7 @@ public class TopsActtivity extends AppCompatActivity {
         //calling our AsyncTask class
 
         TopsAsyncTask task = new TopsAsyncTask(this);
-        task.execute(5);
+        task.execute(1);
 
         //the 5 means the loop will always run for 5 seconds each time the activity restarts or after being on pause
 
@@ -183,7 +183,7 @@ public class TopsActtivity extends AppCompatActivity {
 
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 2) {
+                if (i == 1) {
 
                     blousesRef = FirebaseDatabase.getInstance().getReference().child("blouse").child("women");
 

@@ -1,10 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -127,7 +127,7 @@ public class WomenSandalActivity extends AppCompatActivity {
         super.onStart();
 
       WomenSandalAsyncTask task = new WomenSandalAsyncTask(this);
-      task.execute(5);
+      task.execute(1);
 
 
     }
@@ -168,7 +168,7 @@ public class WomenSandalActivity extends AppCompatActivity {
 
                 publishProgress( (i * 100) / integers[0] );
 
-                if (i == 2){
+                if (i == 1){
 
                     sandalRef = FirebaseDatabase.getInstance().getReference().child("sandals").child("women");
 
