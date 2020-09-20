@@ -49,7 +49,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
     Bitmap bitmap;
 
-    private  String gender = "men";
+    private String gender = "men";
 
     private ProgressDialog loadingbar;
 
@@ -139,7 +139,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
                 ValidateProductData();
 
             }
@@ -206,16 +205,11 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product name required", Toast.LENGTH_SHORT).show();
 
-        }
-        else  if (TextUtils.isEmpty(priority)){
+        } else if (TextUtils.isEmpty(priority)) {
 
             Toast.makeText(AdminAddNewProductActivity.this, "product priority required", Toast.LENGTH_SHORT).show();
 
-        }
-
-        else {
-
-            Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
+        } else {
 
 
             try {
@@ -226,20 +220,14 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
 
             //method for storing image info
-          // StoreProductInformation();
+            // StoreProductInformation();
 
         }
 
     }
 
 
-
-
-
-
-
     private void StoreProductInformation() throws IOException {
-
 
 
         loadingbar.setTitle("Add New Product");
@@ -391,7 +379,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                     }
                 });
     }
-
 
 
 }

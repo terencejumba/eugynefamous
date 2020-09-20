@@ -65,10 +65,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/alataregular"
+                android:gravity="center"
+                android:text="delivery fee = 160Ksh"
+                android:textColor="@color/colortext"
+                android:textSize="@dimen/_12sdp" />
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cart_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/delivery"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@color/colorhome" />
 

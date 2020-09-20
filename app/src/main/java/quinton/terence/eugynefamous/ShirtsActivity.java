@@ -175,7 +175,7 @@ public class ShirtsActivity extends AppCompatActivity {
 
                 publishProgress( (i * 100) / integers[0] );
 
-                if (i == 1){
+                if (i == 0){
 
                     shatiRef = FirebaseDatabase.getInstance().getReference().child("shirts").child("men");
 
@@ -195,7 +195,7 @@ public class ShirtsActivity extends AppCompatActivity {
                                     holder.txtProductDescription.setText(model.getDescription());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

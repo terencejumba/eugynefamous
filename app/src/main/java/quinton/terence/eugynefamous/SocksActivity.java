@@ -169,7 +169,7 @@ public class SocksActivity extends AppCompatActivity {
 
                 publishProgress( (i * 100) / integers[0] );
 
-                if (i == 1){
+                if (i == 0){
 
                     socksRef = FirebaseDatabase.getInstance().getReference().child("socks").child("men");
 
@@ -188,7 +188,7 @@ public class SocksActivity extends AppCompatActivity {
                                     holder.txtProductName.setText(model.getPname());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -266,7 +266,7 @@ public class SocksActivity extends AppCompatActivity {
                                     holder.txtProductName.setText(model.getPname());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

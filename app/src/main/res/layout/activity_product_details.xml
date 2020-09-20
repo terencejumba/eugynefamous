@@ -172,8 +172,9 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@layout/edittext_design"
                     android:fontFamily="@font/spartan"
+                    android:inputType="number"
                     android:hint="8"
-                    android:padding="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
                     android:textColor="@color/colortext"
                     android:textSize="@dimen/_10sdp" />
 
@@ -187,8 +188,9 @@
                     android:layout_toRightOf="@id/product_details_size"
                     android:background="@layout/edittext_design"
                     android:fontFamily="@font/spartan"
+                    android:inputType="text"
                     android:hint="black"
-                    android:padding="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
                     android:textColor="@color/colortext"
                     android:textSize="@dimen/_10sdp" />
 

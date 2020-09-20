@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorpprimary"
-        android:padding="10dp"
-        android:layout_marginTop="@dimen/_10sdp">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/cart_product_name"

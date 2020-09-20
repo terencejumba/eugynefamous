@@ -179,7 +179,7 @@ public class Page7Activity extends AppCompatActivity {
 
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 1){
+                if (i == 0){
 
 
                     pageRefer = FirebaseDatabase.getInstance().getReference().child(category).child(sex);
@@ -200,7 +200,7 @@ public class Page7Activity extends AppCompatActivity {
                                     holder.txtProductDescription.setText(model.getDescription());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

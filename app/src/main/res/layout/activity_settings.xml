@@ -89,7 +89,7 @@
     <EditText
         android:id="@+id/settings_phone_number"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/profile_image_change"
         android:background="@layout/edittext_design"
         android:layout_margin="@dimen/_15sdp"
@@ -97,8 +97,8 @@
         android:fontFamily="@font/spartan"
         android:textColorHint="@color/colortext"
         android:textColor="@color/colortext"
-        android:textSize="@dimen/_15sdp"
-        android:padding="@dimen/_10sdp" />
+        android:textSize="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp" />
 
     <EditText
         android:id="@+id/settings_full_name"
@@ -110,37 +110,37 @@
         android:layout_margin="@dimen/_15sdp"
         android:textColorHint="@color/colortext"
         android:textColor="@color/colortext"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_10sdp"
         android:hint="enter full names"
-        android:padding="@dimen/_10sdp" />
+        android:padding="@dimen/_5sdp" />
 
     <EditText
         android:id="@+id/settings_user_name"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/settings_full_name"
         android:fontFamily="@font/spartan"
         android:background="@layout/edittext_design"
         android:textColorHint="@color/colortext"
         android:textColor="@color/colortext"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_10sdp"
         android:layout_margin="@dimen/_15sdp"
         android:hint="enter username"
-        android:padding="@dimen/_10sdp" />
+        android:padding="@dimen/_5sdp" />
 
     <EditText
         android:id="@+id/settings_address"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/settings_user_name"
         android:background="@layout/edittext_design"
         android:layout_margin="@dimen/_15sdp"
         android:fontFamily="@font/spartan"
         android:textColorHint="@color/colortext"
         android:textColor="@color/colortext"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_10sdp"
         android:hint="enter address"
-        android:padding="@dimen/_10sdp" />
+        android:padding="@dimen/_5sdp" />
 
     <Button
         android:id="@+id/settings_security_questions_btn"
@@ -150,10 +150,10 @@
         android:layout_margin="15dp"
         android:padding="10dp"
         android:fontFamily="@font/alataregular"
-        android:textSize="@dimen/_17sdp"
+        android:textSize="@dimen/_13sdp"
         android:background="@layout/button_indesign"
-
-        android:text="set security question"
+        android:textAllCaps="false"
+        android:text="Set Security Question"
         android:textColor="@color/colortext" />
 
         </RelativeLayout>

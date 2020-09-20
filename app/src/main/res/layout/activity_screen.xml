@@ -5,26 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity"
-    android:background="@color/colorPrimary">
+    android:background="#BAD5E1">
 
-    <TextView
-        android:id="@+id/splash_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/splash_image"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/_30sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:fontFamily="@font/aclonica"
-        android:text="Eugyne Famous"
-        android:textColor="@color/colortext" />
 
 
     <ImageView
         android:id="@+id/splash_image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/orangey"
+        android:layout_height="@dimen/_300sdp"
+        android:src="@drawable/splash"
         android:layout_centerInParent="true"/>
 
 

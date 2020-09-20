@@ -113,7 +113,7 @@ public class SearchProductsActivity extends AppCompatActivity {
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                        Picasso.get().load(model.getImage()).into(holder.imageView);
+                        Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                         //setting a click listener to the relative layout

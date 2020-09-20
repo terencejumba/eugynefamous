@@ -164,7 +164,7 @@ public class BagsActivity extends AppCompatActivity {
                 //this is for the progress bar
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 1) {
+                if (i == 0) {
 
 
                     bagsRef = FirebaseDatabase.getInstance().getReference().child("bags").child("women");
@@ -184,7 +184,7 @@ public class BagsActivity extends AppCompatActivity {
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -260,7 +260,7 @@ public class BagsActivity extends AppCompatActivity {
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

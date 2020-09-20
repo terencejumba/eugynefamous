@@ -517,7 +517,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 1) {
+                if (i == 0) {
 
                     //adding a query to retrieve all products
                     FirebaseRecyclerOptions<products> options =
@@ -537,7 +537,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -611,7 +611,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -685,7 +685,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -758,7 +758,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout
@@ -830,7 +830,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

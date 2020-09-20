@@ -1,17 +1,18 @@
 package quinton.terence.eugynefamous.productsdetails;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,6 +54,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
+        //removing the top status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //hides the action bar
+        getSupportActionBar().hide();
+
 
         //hooks
 
@@ -237,7 +243,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     price.setText(Product.getPrice());
                     productDescription.setText(Product.getDescription());
 
-                    Picasso.get().load(Product.getImage()).into(productImage);
+                    Picasso.get().load(Product.getImage()).placeholder(R.drawable.progressload).into(productImage);
 
                 }
 

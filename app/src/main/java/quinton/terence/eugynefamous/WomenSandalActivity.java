@@ -168,7 +168,7 @@ public class WomenSandalActivity extends AppCompatActivity {
 
                 publishProgress( (i * 100) / integers[0] );
 
-                if (i == 1){
+                if (i == 0){
 
                     sandalRef = FirebaseDatabase.getInstance().getReference().child("sandals").child("women");
 
@@ -187,7 +187,7 @@ public class WomenSandalActivity extends AppCompatActivity {
                                     holder.txtProductDescription.setText(model.getDescription());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

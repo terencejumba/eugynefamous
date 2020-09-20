@@ -98,6 +98,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/alataregular"
         android:text="am not admin"
+        android:visibility="gone"
         android:textColor="@color/colortext"
         android:textSize="@dimen/_12sdp" />
 

@@ -1,10 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -135,7 +135,7 @@ public class BlouseActivity extends AppCompatActivity {
 
 
         blouseAsyncTask task = new blouseAsyncTask(this);
-        task.execute(3);
+        task.execute(1);
 
 
     }
@@ -177,7 +177,7 @@ public class BlouseActivity extends AppCompatActivity {
 
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 1) {
+                if (i == 0) {
 
                     blousesRef = FirebaseDatabase.getInstance().getReference().child("blouse").child("women");
 
@@ -196,7 +196,7 @@ public class BlouseActivity extends AppCompatActivity {
                                     holder.txtProductDescription.setText(model.getDescription());
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

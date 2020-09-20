@@ -1,7 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
@@ -41,9 +38,14 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         HomeEditText = findViewById(R.id.shipment_city);
         confirmOrderBtn = findViewById(R.id.confirm_final_order_btn);
 
+
+
         //getting the intent
 
         totalAmount = getIntent().getStringExtra("Total Price");
+
+        Toast.makeText(this, "Total Price:"+ " " + totalAmount + "Ksh", Toast.LENGTH_LONG).show();
+
 
         confirmOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override

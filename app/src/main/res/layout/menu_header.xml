@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colortext"
-        android:text="eugynefamous"
+        android:text="HypeFocus"
         android:fontFamily="@font/aclonica"
         android:textSize="@dimen/_18ssp"
         android:layout_above="@id/menu_slogan"

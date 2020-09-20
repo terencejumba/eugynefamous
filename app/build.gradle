@@ -7,9 +7,9 @@ android {
 
     defaultConfig {
         applicationId "quinton.terence.eugynefamous"
-        minSdkVersion 26
+        minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
+        versionCode 2
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -52,9 +52,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.jakewharton:butterknife:10.1.0'
+  /*  implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton.timber:timber:4.7.1'*/
 
     implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
 

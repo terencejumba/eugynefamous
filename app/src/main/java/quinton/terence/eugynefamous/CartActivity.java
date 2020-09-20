@@ -1,11 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +11,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -67,6 +67,8 @@ public class CartActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.cart_back);
 
 
+
+
         nextProcessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,8 @@ public class CartActivity extends AppCompatActivity {
                 Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
 
                 //String.valueOf(overTotalPrice) converts it to string data type
+
+                overTotalPrice = overTotalPrice + 160;
 
                 intent.putExtra("Total Price", String.valueOf(overTotalPrice));
 
@@ -112,6 +116,7 @@ public class CartActivity extends AppCompatActivity {
         totalAmount.setVisibility(View.VISIBLE);
 
 
+        totalAmount.setText( "Total Price : "  + String.valueOf(overTotalPrice));
 
 
         checkOrderState();

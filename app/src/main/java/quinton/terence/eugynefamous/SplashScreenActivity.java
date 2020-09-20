@@ -1,7 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,9 +7,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import quinton.terence.eugynefamous.common.LogInActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -20,7 +17,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     //variables
     private ImageView splashOrangey;
-    private TextView splashname;
+
 
     private Animation sideAnim, bottomAnim;
 
@@ -36,7 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         //hooks
         splashOrangey = findViewById(R.id.splash_image);
-        splashname = findViewById(R.id.splash_text);
+
 
 
         //animation hooks
@@ -45,7 +42,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         //setting the animations
         splashOrangey.setAnimation(sideAnim);
-        splashname.setAnimation(bottomAnim);
 
 
         new Handler().postDelayed(new Runnable() {

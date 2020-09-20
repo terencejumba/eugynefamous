@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class SweaterActivity extends AppCompatActivity {
     private TextView showMore, womenShowMore;
 
     private ProgressBar progressBar;
+
+    private ImageView backBtn;
 
     //getting intent
     private String type = "";
@@ -73,6 +76,16 @@ public class SweaterActivity extends AppCompatActivity {
         showMore = findViewById(R.id.mensweat_ers_more);
         womenShowMore = findViewById(R.id.womensweat_ers_more);
         progressBar = findViewById(R.id.progress_bar_sweater);
+        backBtn = findViewById(R.id.sweater_back);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SweaterActivity.super.onBackPressed();
+
+            }
+        });
 
         showMore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +159,7 @@ public class SweaterActivity extends AppCompatActivity {
 
                 publishProgress((i * 100) / integers[0]);
 
-                if (i == 1) {
+                if (i == 0) {
 
                     sweatersRef = FirebaseDatabase.getInstance().getReference().child("sweaters").child("men");
 
@@ -165,7 +178,7 @@ public class SweaterActivity extends AppCompatActivity {
 
                                     holder.txtProductPrice.setText(model.getPrice() + "Ksh");
 
-                                    Picasso.get().load(model.getImage()).into(holder.imageView);
+                                    Picasso.get().load(model.getImage()).placeholder(R.drawable.progressload).into(holder.imageView);
 
 
                                     //setting a click listener to the relative layout

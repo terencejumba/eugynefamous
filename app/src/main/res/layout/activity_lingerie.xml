@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colormajor"
+    android:background="@color/colorhome"
     android:padding="@dimen/_5sdp"
     tools:context=".LingerieActivity">
 
@@ -30,7 +30,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/alataregular"
             android:gravity="center"
-            android:text="Lingerie, sleep and lounge"
+            android:text="Lingerie, sleep"
             android:textAlignment="center"
             android:textColor="@color/colortext"
             android:textSize="@dimen/_20sdp" />
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lingerie_"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:background="@color/colormajor" />
+                android:background="@color/colorhome" />
 
             <Button
                 android:id="@+id/next_lingerie"

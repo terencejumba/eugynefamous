@@ -1,8 +1,5 @@
 package quinton.terence.eugynefamous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import quinton.terence.eugynefamous.Model.AccessToken;
 import quinton.terence.eugynefamous.Model.STKPush;
@@ -42,13 +41,13 @@ public class mpesaActivity extends AppCompatActivity implements View.OnClickList
     private ApiClient mApiClient;
     private ProgressDialog mProgressDialog;
 
-    @BindView(R.id.mpesa_amount)
+   // @BindView(R.id.mpesa_amount)
     EditText mAmount;
-    @BindView(R.id.mpesa_phone)
+   // @BindView(R.id.mpesa_phone)
     EditText mPhone;
-    @BindView(R.id.mpesa_pay)
+   // @BindView(R.id.mpesa_pay)
     Button mPay;
-    @BindView(R.id.mpesa_done)
+ //   @BindView(R.id.mpesa_done)
     Button Done;
 
     //for getting intents
@@ -225,8 +224,12 @@ public class mpesaActivity extends AppCompatActivity implements View.OnClickList
                 mProgressDialog.dismiss();
                 try {
                     if (response.isSuccessful()) {
-                        Timber.d("post submitted to API. %s", response.body());
+                       // Timber.d("post submitted to API. %s", response.body());
 
+                       /* //getting all the heroes
+                        List<Hero> heroes = response.body();
+
+                        for ()*/
 
                         Done.setVisibility(View.VISIBLE);
 
